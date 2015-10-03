@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.16)  3 OCT 2015 12:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.16)  3 OCT 2015 12:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -735,20 +735,20 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 3.
  (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ))
-(./sections/ser1_ex5.tex)
-Overfull \hbox (5.58113pt too wide) in paragraph at lines 8--86
+(./sections/ser1.tex)
+Overfull \hbox (5.58113pt too wide) in paragraph at lines 14--86
 \T1/cmr/m/n/12 Source : [][]$\T1/cmtt/m/n/12 https : / / www . google . ch / ur
 l ? sa = t & rct = j & q = &esrc = s & source = web & cd = 3 & cad = rja &
  []
 
 
-Overfull \hbox (49.5859pt too wide) in paragraph at lines 8--86
+Overfull \hbox (49.5859pt too wide) in paragraph at lines 14--86
 \T1/cmtt/m/n/12 uact = 8 & ved = 0CDEQFjACahUKEwiqj6GfhKbIAhWLXBoKHXDUAow & url
  = http % 3A % 2F % 2Fwww . cs . berkeley .
  []
 
 
-Overfull \hbox (174.55576pt too wide) in paragraph at lines 8--86
+Overfull \hbox (174.55576pt too wide) in paragraph at lines 14--86
 \T1/cmtt/m/n/12 edu % 2F~kubitron % 2Fcourses % 2Fcs194-[]24-[]S14 % 2Fhand-[]o
 uts % 2Fbonwick _ slab . pdf & usg = AFQjCNENx6yGi8dVRbdR2Si1OpXE _
  []
@@ -766,32 +766,33 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
 Package rerunfilecheck Info: File `CSEL.out' has not changed.
-(rerunfilecheck)             Checksum: 6F2D1746B45549F08A08283B5DC36D3A;169.
+(rerunfilecheck)             Checksum: 1A2737189296BE246305AC51362C5DD4;350.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 10132 strings out of 493089
- 142518 string characters out of 6140694
- 281345 words of memory out of 5000000
- 13450 multiletter control sequences out of 15000+600000
- 18424 words of font info for 47 fonts, out of 8000000 for 9000
+ 10140 strings out of 493089
+ 142640 string characters out of 6140694
+ 282345 words of memory out of 5000000
+ 13454 multiletter control sequences out of 15000+600000
+ 19199 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,11n,49p,919b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
 exmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts
-/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/c
-m-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc144
-0.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2488.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/f
-onts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfr
-m1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr
-/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-di
-st/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on CSEL.pdf (2 pages, 187939 bytes).
+/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/c
+m-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx248
+8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/cm-super/sfcc2488.pfb></usr/share/texmf-dist/f
+onts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfr
+m1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr
+/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-di
+st/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/
+public/cm-super/sftt1200.pfb>
+Output written on CSEL.pdf (2 pages, 200550 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 113 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

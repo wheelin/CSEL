@@ -1,3 +1,6 @@
 \select@language {french}
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}
-\contentsline {section}{\numberline {2}S\IeC {\'e}rie 1, exercice 5 : gestion de la m\IeC {\'e}moire, biblioth\IeC {\`e}ques et fonctions utiles}{2}{section.2}
+\contentsline {section}{\numberline {2}Travaux pratiques 1}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Gestion de la m\IeC {\'e}moire, biblioth\IeC {\`e}ques et fonctions utiles}{2}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Exercice 4}{2}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Exercice 5}{2}{subsubsection.2.1.2}
