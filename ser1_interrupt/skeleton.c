@@ -45,8 +45,7 @@ static int __init skeleton_init(void)
 		} else
 		{
 			ret = gpio_request(EXYNOS5_GPX1(SW_pin_nr[i]));
-			ret = gpio_direction_imput(EXYNOS5_GPX1(SW_pin_nr[i]));
-			
+			ret = gpio_direction_imput(EXYNOS5_GPX1(SW_pin_nr[i]));	
 		}
 		CHECK_RET(ret);
 	}
