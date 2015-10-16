@@ -13,8 +13,27 @@
 \end{enumerate}
 Source : \url{https://www.google.ch/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0CDEQFjACahUKEwiqj6GfhKbIAhWLXBoKHXDUAow&url=http%3A%2F%2Fwww.cs.berkeley.edu%2F~kubitron%2Fcourses%2Fcs194-24-S14%2Fhand-outs%2Fbonwick_slab.pdf&usg=AFQjCNENx6yGi8dVRbdR2Si1OpXE_NuNkg&sig2=ZdJ_jUWHIfO1qFIIikEyHA}
 	
+\subsection{Accès aux entrées/sorties}
+\subsubsection{Exercice 6}
+À l'aide d'un module noyau, réserver la zone mémoire correspondante au registre du uP décrivant son identification. Adress de départ 0x1000'0000, taille de la zone 0x100. Valider cette réservation à l'aide de la commande 
+\begin{lstlisting}
+	cat /proc/iomem
+\end{lstlisting}
+Adapter ce module afin d'afficher cet identifiant dans la console de déboggage "dmesg". Ce dernier est composé des champs suivants:
+\begin{enumerate}
+	\item Bit 31..12: product id
+	\item Bit 11..8: package id
+	\item Bit 7..4: major revision
+	\item Bit 3..0: minor revision\\
+\end{enumerate}
+
+Voici le code:
+\lstinputlisting{code/skeleton_ser1ex6.c}
+
+L'identifiant demandé par la donnée est en fait l'identifiant de la zone mémoire réservée. Il peut être obtenu grâce à la méthode \textit{ioread}. Mais pour pouvoir lire cette zone, il faut la mapper dans la mémoire vituelle du noyau avec la méthode \textit{ioremap}, car le noyau n'a pas directement accès aux entrées/sorties.
+	
 \subsection{Gestion des interruptions}
-\subsubsection{Excerici 9}
+\subsubsection{Exercice 9}
 Développement d'un petit module permettant de capturer les pressions exercées sur les swtiches de la carte d'extension par interruption. Afin de permettre le debugging du module, chaque capture affichera un petit message.\\
 Informations fournies:
 \begin{itemize}
