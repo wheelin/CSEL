@@ -26,15 +26,14 @@ static int __init skeleton_init(void)
 		return -EFAULT;
 	}
 
-	//Avoid using address returned by ioremap
-	regs = (void*)(&addr);
-
 	// Read memory id;
-	memId = ioread32(regs);
+	memId = ioread32(regs+0x00);
 	pr_info("uP register: Bit 31..12 : product id=0x%05x\n",(memId>>12)&0x7ffff);
 	pr_info("uP register: Bit 11..8  : package id=0x%01x\n",(memId>>8)&0xf);
 	pr_info("uP register: Bit 7..4   : major revision=0x%01x\n",(memId>>4)&0xf);
 	pr_info("uP register: Bit 3..0   : minor revision=0x%01x\n",(memId)&0xf);
+
+	iounmap(regs);
 
 	return 0;
 }
