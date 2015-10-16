@@ -12,3 +12,38 @@
 	\item SLUB : "Simple and instruction cost counts. Superior Debugging. Defragmentation. Execution time friendly"
 \end{enumerate}
 Source : \url{https://www.google.ch/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0CDEQFjACahUKEwiqj6GfhKbIAhWLXBoKHXDUAow&url=http%3A%2F%2Fwww.cs.berkeley.edu%2F~kubitron%2Fcourses%2Fcs194-24-S14%2Fhand-outs%2Fbonwick_slab.pdf&usg=AFQjCNENx6yGi8dVRbdR2Si1OpXE_NuNkg&sig2=ZdJ_jUWHIfO1qFIIikEyHA}
+	
+\subsection{Gestion des interruptions}
+\subsubsection{Excerici 9}
+Développement d'un petit module permettant de capturer les pressions exercées sur les swtiches de la carte d'extension par interruption. Afin de permettre le debugging du module, chaque capture affichera un petit message.\\
+Informations fournies:
+\begin{itemize}
+	\item Configurer la direction des GPIO en entrée : 
+	\begin{lstlisting}
+	gpio_resquest(EXYNOS5_GPX<gpio_nr>(<pin-nr>));
+	\end{lstlisting}
+	\begin{lstlisting}
+	gpio_direction_input(EXYNOS5_GPX<gpio_nr>(<pin_nr>));
+	\end{lstlisting}
+	\item Obtenir le vecteur d'interruption avec le service suivant:
+	\begin{lstlisting}
+	gpio_to_irq (<io_nr>);
+	\end{lstlisting}
+	\item Informations sur les switches de la carte d'extension 
+	\begin{itemize}
+	\item sw1 - gpio\_nr=2, pin\_nr=5,  io\_nr=29
+	\item sw2 - gpio\_nr=2, pin\_nr=6,  io\_nr=30
+	\item sw3 - gpio\_nr=1, pin\_nr=6,  io\_nr=22
+	\item sw4 - gpio\_nr=1, pin\_nr=2,  io\_nr=18\\
+	\end{itemize}
+\end{itemize}
+Voici le code. Les switches de 1 à 4 sont interceptés. 
+\lstinputlisting{code/skeleton_ser1ex9.c}
+Et voici la preuve que tout fonctionne conformément, avec un message s'affichant pour chaque bouton pressé:
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=14cm]{img/interrupt_success.png}
+		\caption{Affichage du chargement du module, des pressions sur les boutons et de la suppression du module}
+		\label{ser1ex9}
+	\end{center}
+\end{figure}
