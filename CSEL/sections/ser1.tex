@@ -30,7 +30,7 @@ Adapter ce module afin d'afficher cet identifiant dans la console de déboggage 
 Voici le code:
 \lstinputlisting{code/skeleton_ser1ex6.c}
 
-L'identifiant demandé par la donnée est en fait l'identifiant de la zone mémoire réservée. Il peut être obtenu grâce à la méthode \textit{ioread}. Mais pour pouvoir lire cette zone, il faut la mapper dans la mémoire vituelle du noyau avec la méthode \textit{ioremap}, car le noyau n'a pas directement accès aux entrées/sorties.
+L'identifiant demandé par la donnée est en fait l'identifiant de la zone mémoire réservée. Il peut être obtenu grâce à la méthode \textit{ioread}. Mais pour pouvoir lire cette zone, il faut la mapper dans la mémoire virtuelle du noyau avec la méthode \textit{ioremap}, car le noyau n'a pas directement accès aux entrées/sorties.
 	
 \subsection{Gestion des interruptions}
 \subsubsection{Exercice 9}

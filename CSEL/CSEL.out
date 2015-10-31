@@ -1,9 +1,27 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Travaux pratiques 1}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Gestion de la m\351moire, biblioth\350ques et fonctions utiles}{section.2}% 3
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Exercice 4}{subsection.2.1}% 4
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Exercice 5}{subsection.2.1}% 5
-\BOOKMARK [2][-]{subsection.2.2}{Acc\350s aux entr\351es/sorties}{section.2}% 6
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Exercice 6}{subsection.2.2}% 7
-\BOOKMARK [2][-]{subsection.2.3}{Gestion des interruptions}{section.2}% 8
-\BOOKMARK [3][-]{subsubsection.2.3.1}{Exercice 9}{subsection.2.3}% 9
+\BOOKMARK [1][-]{section.2}{Environnement Linux Embarqu\351}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Objectifs}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Informations pratiques}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Gravure de la carte SD}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Mise en place de l'infrastructure}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Configuration de la machine virtuelle}{subsection.2.4}% 7
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Acc\350s ssh sans mot de passe}{subsection.2.4}% 8
+\BOOKMARK [3][-]{subsubsection.2.4.3}{Cr\351ation de l'espace de travail}{subsection.2.4}% 9
+\BOOKMARK [2][-]{subsection.2.5}{Debugging de l'application}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.6}{Test des diff\351rents exemples propos\351s}{section.2}% 11
+\BOOKMARK [3][-]{subsubsection.2.6.1}{Fibonacci}{subsection.2.6}% 12
+\BOOKMARK [3][-]{subsubsection.2.6.2}{Tracing}{subsection.2.6}% 13
+\BOOKMARK [3][-]{subsubsection.2.6.3}{Core dumps}{subsection.2.6}% 14
+\BOOKMARK [3][-]{subsubsection.2.6.4}{Backtrace}{subsection.2.6}% 15
+\BOOKMARK [3][-]{subsubsection.2.6.5}{System calls}{subsection.2.6}% 16
+\BOOKMARK [3][-]{subsubsection.2.6.6}{Memory leaks}{subsection.2.6}% 17
+\BOOKMARK [2][-]{subsection.2.7}{Mise en production de l'ODROID-XU3}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.8}{R\351ponse aux questions}{section.2}% 19
+\BOOKMARK [1][-]{section.3}{Travaux pratiques 1}{}% 20
+\BOOKMARK [2][-]{subsection.3.1}{Gestion de la m\351moire, biblioth\350ques et fonctions utiles}{section.3}% 21
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Exercice 4}{subsection.3.1}% 22
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Exercice 5}{subsection.3.1}% 23
+\BOOKMARK [2][-]{subsection.3.2}{Acc\350s aux entr\351es/sorties}{section.3}% 24
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Exercice 6}{subsection.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.3}{Gestion des interruptions}{section.3}% 26
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Exercice 9}{subsection.3.3}% 27
