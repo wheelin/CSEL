@@ -20,8 +20,8 @@ $ mount
 ...
 \end{lstlisting}
 La commande va lister tous les périphériques connectés, dans notre cas, la carte SD se nomme lmi et est liée à /dev/sdb2 et /dev/sdb1.\\
-Un script a ensuite été écrit, regroupant les différentes commandes à exécuter pour la gravure de la carte.\\
-Le contenu du script est visible dans les fichiers remis avec le rapport sous \textit{/EnvLinuxEmbarque/flasheMMC.sh}.\\
+Un script a ensuite été écrit, regroupant les différentes commandes à exécuter pour la gravure de la carte.\\\\
+\textbf{Emplacement du script : } \textit{/EnvLinuxEmbarque/flasheMMC.sh}\\\\
 Le plus simple est de placer le script directement dans le workspace CSEL. Il s'exécute à l'aide de la commande suivante:
 \begin{lstlisting}
 ./flasheMMc.sh
@@ -132,6 +132,7 @@ Le but est de configurer le noyau Linux afin d’attacher un usrfs sous ext4 dep
 	sysfs           /sys           sysfs    defaults          0      0
 	192.168.0.4:/home/lmi/workspace /usr/workspace  nfs     hard,intr,nolock
 # mount -a
+# reboot
 \end{lstlisting}
 Pour contrôler que le répertoire est bien partagé avec la cible, on peut y entrer la commande mount et normalement on voit le répertoire partagé.
 \begin{lstlisting}
@@ -191,7 +192,7 @@ Pour la suite du rapport, les symboles suivant sont définis:
 \begin{enumerate}
 	\item \$ : commande sur la machine hôte
 	\item \# : commande sur la cible
-	\item > : commande sur la cible en NFS
+	\item > : commande sur la cible arrêtée avant démarrage
 \end{enumerate}
 
 \subsubsection{Fibonacci}

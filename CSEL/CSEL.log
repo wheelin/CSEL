@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.31)  31 OCT 2015 16:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.31)  1 NOV 2015 15:09
 entering extended mode
 **CSEL.tex
 (CSEL.tex
@@ -728,152 +728,262 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2]
+Underfull \hbox (badness 10000) in paragraph at lines 22--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--26
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 29--32
 
  []
 
-[3] <img/vmConfig1.png, id=185, 279.444pt x 66.84975pt>
+[3] <img/vmConfig1.png, id=226, 279.444pt x 66.84975pt>
 File: img/vmConfig1.png Graphic file (type png)
 
 <use img/vmConfig1.png>
 Package pdftex.def Info: img/vmConfig1.png used on input line 42.
 (pdftex.def)             Requested size: 398.33858pt x 95.29347pt.
- <img/vmConfig2.png, id=186, 488.42474pt x 468.5505pt>
+ <img/vmConfig2.png, id=227, 488.42474pt x 468.5505pt>
 File: img/vmConfig2.png Graphic file (type png)
 
 <use img/vmConfig2.png>
 Package pdftex.def Info: img/vmConfig2.png used on input line 50.
 (pdftex.def)             Requested size: 398.33858pt x 382.14055pt.
  [4 <./img/vmConfig1.png>]
-<img/vmConfig3.png, id=195, 316.7835pt x 224.037pt>
+<img/vmConfig3.png, id=236, 316.7835pt x 224.037pt>
 File: img/vmConfig3.png Graphic file (type png)
  <use img/vmConfig3.png>
 Package pdftex.def Info: img/vmConfig3.png used on input line 58.
 (pdftex.def)             Requested size: 398.33858pt x 281.71378pt.
 
 [5 <./img/vmConfig2.png>] [6 <./img/vmConfig3.png>] [7]
-<img/eclipseConfig1.png, id=266, 283.0575pt x 194.52675pt>
+<img/eclipseConfig1.png, id=307, 283.0575pt x 194.52675pt>
 File: img/eclipseConfig1.png Graphic file (type png)
 
 <use img/eclipseConfig1.png>
-Package pdftex.def Info: img/eclipseConfig1.png used on input line 153.
+Package pdftex.def Info: img/eclipseConfig1.png used on input line 154.
 (pdftex.def)             Requested size: 398.33858pt x 273.77516pt.
  [8]
-<img/eclipseConfig2.png, id=280, 726.715pt x 611.28375pt>
+<img/eclipseConfig2.png, id=322, 726.715pt x 611.28375pt>
 File: img/eclipseConfig2.png Graphic file (type png)
 
 <use img/eclipseConfig2.png>
-Package pdftex.def Info: img/eclipseConfig2.png used on input line 161.
+Package pdftex.def Info: img/eclipseConfig2.png used on input line 162.
 (pdftex.def)             Requested size: 398.33858pt x 335.06915pt.
  [9 <./img/eclipseConfig1.png>]
-<img/eclipseConfig3.png, id=287, 675.7245pt x 472.164pt>
+<img/eclipseConfig3.png, id=329, 675.7245pt x 472.164pt>
 File: img/eclipseConfig3.png Graphic file (type png)
 
 <use img/eclipseConfig3.png>
-Package pdftex.def Info: img/eclipseConfig3.png used on input line 169.
+Package pdftex.def Info: img/eclipseConfig3.png used on input line 170.
 (pdftex.def)             Requested size: 398.33858pt x 278.3366pt.
 
-<img/eclipseConfig4.png, id=288, 675.7245pt x 472.164pt>
+<img/eclipseConfig4.png, id=330, 675.7245pt x 472.164pt>
 File: img/eclipseConfig4.png Graphic file (type png)
 
 <use img/eclipseConfig4.png>
-Package pdftex.def Info: img/eclipseConfig4.png used on input line 176.
+Package pdftex.def Info: img/eclipseConfig4.png used on input line 177.
 (pdftex.def)             Requested size: 398.33858pt x 278.3366pt.
  [10 <./img/eclipseConfig2.png>]
-<img/eclipseConfig5.png, id=295, 969.02025pt x 617.9085pt>
+<img/eclipseConfig5.png, id=337, 969.02025pt x 617.9085pt>
 File: img/eclipseConfig5.png Graphic file (type png)
 
 <use img/eclipseConfig5.png>
-Package pdftex.def Info: img/eclipseConfig5.png used on input line 184.
+Package pdftex.def Info: img/eclipseConfig5.png used on input line 185.
 (pdftex.def)             Requested size: 469.47046pt x 299.36469pt.
  [11 <./img/eclipseConfig3.png> <./img/eclipseConfig4.png>] [12 <./img/eclipseC
 onfig5.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 242.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 243.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 242.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 243.
  [13] [14]
 [15] [16]) (sections/ser1.tex
-Overfull \hbox (5.58113pt too wide) in paragraph at lines 14--15
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 42--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--69
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
+
+ []
+
+[21]
+Overfull \hbox (5.58113pt too wide) in paragraph at lines 196--197
 \T1/cmr/m/n/12 Source : [][]$\T1/cmtt/m/n/12 https : / / www . google . ch / ur
 l ? sa = t & rct = j & q = &esrc = s & source = web & cd = 3 & cad = rja &$
  []
 
 
-Overfull \hbox (49.5859pt too wide) in paragraph at lines 14--15
+Overfull \hbox (49.5859pt too wide) in paragraph at lines 196--197
 $\T1/cmtt/m/n/12 uact = 8 & ved = 0CDEQFjACahUKEwiqj6GfhKbIAhWLXBoKHXDUAow & ur
 l = http % 3A % 2F % 2Fwww . cs . berkeley .$
  []
 
 
-Overfull \hbox (174.55576pt too wide) in paragraph at lines 14--15
+Overfull \hbox (174.55576pt too wide) in paragraph at lines 196--197
 $\T1/cmtt/m/n/12 edu % 2F~kubitron % 2Fcourses % 2Fcs194-[]24-[]S14 % 2Fhand-[]
 outs % 2Fbonwick _ slab . pdf & usg = AFQjCNENx6yGi8dVRbdR2Si1OpXE _$
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--203
 
  []
 
-(code/skeleton_ser1ex6.c [18])
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
-(code/skeleton_ser1ex9.c [19] [20])
-<img/interrupt_success.png, id=655, 573.64313pt x 219.06844pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--213
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 248--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--266
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+ []
+
+<img/interrupt_success.png, id=749, 573.64313pt x 219.06844pt>
 File: img/interrupt_success.png Graphic file (type png)
 
 <use img/interrupt_success.png>
-Package pdftex.def Info: img/interrupt_success.png used on input line 64.
+Package pdftex.def Info: img/interrupt_success.png used on input line 312.
 (pdftex.def)             Requested size: 398.33858pt x 152.12341pt.
-)
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--316
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--316
+
+ []
+
+[24])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 88.
- [21 <./img/interrupt_success.png>]
+ [25 <./img/interrupt_success.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 88.
  (CSEL.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 88.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 88.
 Package rerunfilecheck Info: File `CSEL.out' has not changed.
-(rerunfilecheck)             Checksum: 5B25A0933E009DA54CED267774CA67C3;2049.
+(rerunfilecheck)             Checksum: A0E2F0416C16DB15B9794658E6C5C58E;2615.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
  ) 
 Here is how much of TeX's memory you used:
- 11590 strings out of 493673
- 161270 string characters out of 3141526
- 476916 words of memory out of 3000000
- 14305 multiletter control sequences out of 15000+200000
- 21324 words of font info for 51 fonts, out of 3000000 for 9000
+ 11804 strings out of 493673
+ 163500 string characters out of 3141526
+ 458916 words of memory out of 3000000
+ 14462 multiletter control sequences out of 15000+200000
+ 22089 words of font info for 52 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 34i,12n,49p,919b,1939s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,14n,49p,919b,1941s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \ectt1200.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\eccc1200.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
-our\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk> <C:\Users\Emilie\AppData\Local\M
-iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Emilie\AppD
-ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1000.pk> <C:\Users\
-Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk>
+our\jknappen\ec\dpi600\ectt1000.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Emilie\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Emilie\AppD
+ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk> <C:\Users\
+Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk>
  <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
-crm0800.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\ecbx1200.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fon
+cbx1200.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecbx1728.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fon
 ts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Emilie\AppData\Local\MiK
-TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk> <C:\Users\Emilie\AppDat
-a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Em
-ilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2488.pk> <
-C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
-x2488.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
-\dpi600\eccc2488.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb>
-Output written on CSEL.pdf (21 pages, 949195 bytes).
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk> <C:\Users\Emilie\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk> <C:\Users\Em
+ilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <
+C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecr
+m2488.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\ecbx2488.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
+jknappen\ec\dpi600\eccc2488.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb>
+Output written on CSEL.pdf (25 pages, 984319 bytes).
 PDF statistics:
- 1349 PDF objects out of 1440 (max. 8388607)
- 455 named destinations out of 1000 (max. 500000)
- 262 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1499 PDF objects out of 1728 (max. 8388607)
+ 518 named destinations out of 1000 (max. 500000)
+ 326 words of extra memory for PDF output out of 10000 (max. 10000000)
 
