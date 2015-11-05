@@ -24,7 +24,10 @@ Pour utiliser correctement la commande mmap, il ne faut pas mettre l'offset à 0
 espace	utilisateur	ces registres	(implémentation	de	l’opération	de	fichier	« mmap »).	
 Le	driver	orienté	mémoire	sera	ensuite	adapté	à	cette	nouvelle	interface.
 Remarque :	à	effectuer	après	les	exercices	des	pilotes	orientés	caractère\\\\
-\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
+\textbf{Emplacement du code : }\\ \textit{/PilotesPeripheriques/exercice2-mmapModule/user}\\
+\textit{/PilotesPeripheriques/exercice2-mmapModule/noyau}\\
+
+\textbf{Remarque : }Cet exercice a été compliqué à réaliser. Le code est un mélange de l'exercice 1 et 5. Il faut garder en tête que pour mapper les registres en espace utilisateur, il faut utiliser les fonction standard des file\_operations (open,close,mmap) et en plus, ajouter les vm\_operations\_struct (open,close) pour agir sur la zone mémoire. Dans le pilote orienté caractère, on utilise la fonction \textit{remap\_pfn\_range} pour mapper la zone mémoire.\\
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
