@@ -1,0 +1,158 @@
+\section{Programmation noyau : Pilotes de périphériques}
+\subsection{Pilotes orientés mémoire}
+\subsubsection{Exercice 1}
+\textbf{Donnée : } Réaliser	un	pilote	orienté	mémoire	permettant	de	mapper	en	espace	utilisateur	les	registres	de	la	
+ FPGA	en	utilisant	le	fichier	virtuel	\textit{/dev/mem}.	Ce	pilote	permettra	de	lire	l’identification	du	uP	
+(chip	id)	décrit	dans	l’exercice	no 6 du	cours	sur	la	programmation	de	modules	noyau.\\\\
+\textbf{Complément : } Ce pilote n'est pas un module noyau, il faut prendre le Makefile d'un des codes d'exemples, par exemple Fibonacci. La cible doit tout de même être démarrée en mode nfs.\\\\
+\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/exercice1-mmap}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+# ./app_a                                                                       
+uP register: Bit 31..12 : product id=0x65422                                    
+uP register: Bit 11..8  : package id=0x0                                        
+uP register: Bit 7..4   : major revision=0x0                                    
+uP register: Bit 3..0   : minor revision=0x1 
+\end{lstlisting}
+
+\textbf{Remarque : } On obtient bien le même id qu'avec le module noyau de l'exercie 6 de la série précédente.\\
+Pour utiliser correctement la commande mmap, il ne faut pas mettre l'offset à 0, mais à 0x1000000 (adresse du chipid de l'exercice6), sinon le code ne fonctionne pas, il essaie de lire une zone mémoire qu'il n'a pas le droit.
+
+\subsubsection{Exercice 2}
+\textbf{Donnée : } Sur	la	base	de	l’exercice	1,	développer	un	pilote	orienté	caractère	permettant	de	mapper	en	
+espace	utilisateur	ces registres	(implémentation	de	l’opération	de	fichier	« mmap »).	
+Le	driver	orienté	mémoire	sera	ensuite	adapté	à	cette	nouvelle	interface.
+Remarque :	à	effectuer	après	les	exercices	des	pilotes	orientés	caractère\\\\
+\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsection{Pilotes orientés caractères}
+\subsubsection{Exercice 3}
+\textbf{Donnée : } Implémenter	un	pilote	de	périphérique	orienté	caractère.	Ce	pilote	sera	capable	de	stocker	dans	
+une	variable	globale	au	module	les	données	reçues	par	l’opération	write et	de	les	restituer	par	
+l’opération	read. Pour	tester	le	module,	on	utilisera	les commandes « echo » et	« cat ».\\\\
+\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/exercice3-ReadWrite}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+$ make clean all
+$ sudo make install
+\end{lstlisting}
+\begin{lstlisting}
+# modprobe mymodule                                                             
+[ 4107.528630] [c2] mod: successfully loaded with major 249                     
+# mknod /dev/mod c 249 0                                                        
+# echo -n test module > /dev/mod                                                
+[ 4134.907095] [c1] mod: open()                                                 
+[ 4134.908540] [c1] mod: write test module                                      
+[ 4134.912539] [c1] mod: release()                                              
+# cat /dev/mod                                                                  
+[ 4145.581863] [c0] mod: open()                                                 
+[ 4145.583312] [c0] mod: read test module                                       
+[ 4145.587140] [c0] mod: read test module                                       
+[ 4145.590820] [c0] mod: release()                                              
+# modprobe -r  mymodule                                                         
+[ 4157.528779] [c1] mod: successfully unloaded   
+\end{lstlisting}
+
+\subsubsection{Exercice 4}
+\textbf{Donnée : } Etendre	la	fonctionnalité	du	pilote	de	l’exercice	\#3 afin	que	l’on	puisse	à	l’aide	d’un	paramètre	
+module	spécifier	le	nombre	d’instance.	Pour	chaque	instance	on	créera	une	variable	unique	
+permettant	de	stocker	les	données	échangées	avec	l’application	en	espace	utilisateur.\\\\
+\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsubsection{Exercice 5}
+\textbf{Donnée : } Développer	une	petite	application	en	espace	utilisateur	permettant	d’accéder	à	ces	pilotes	
+orientés	caractère.	L’application	devra	écrire	un	texte	dans	le	pilote	et	le	relire.\\\\
+\textbf{Emplacement du code : }\\ \textit{/PilotesPeripheriques/exercice5-UserAccess/user}\\
+\textit{/PilotesPeripheriques/exercice5-UserAccess/noyau}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+lmi@csel1:~/workspace/csel1/environment/peripheral/exercice5/user$ make clean all
+lmi@csel1:~/workspace/csel1/environment/peripheral/exercice5/user$ cd ../noyau/
+lmi@csel1:~/workspace/csel1/environment/peripheral/exercice5/noyau$ make clean all
+lmi@csel1:~/workspace/csel1/environment/peripheral/exercice5/noyau$ sudo make install
+\end{lstlisting}
+\begin{lstlisting}
+# modprobe mymodule                                                             
+[  231.111019] [c2] mod: successfully loaded with major 249    
+# mknod /dev/mod c 249 0                  
+# ./app_a /dev/mod HELLO                                                        
+[  234.969067] [c0] mod: open()                                                 
+[  234.970719] [c0] mod: write HELLO                                            
+[  234.973927] [c0] mod: read HELLO                                             
+[  234.977039] [c0] mod: release()                                              
+file /dev/mod open                                                              
+write HELLO                                                                     
+read HELLO                                                                      
+file /dev/mod close                                                             
+# modprobe -r mymodule                                                          
+[  261.512478] [c0] mod: successfully unloaded
+\end{lstlisting}
+
+\subsection{Opérations bloquantes}
+\subsubsection{Exercice 6}
+\textbf{Donnée : } Développer	un pilote	et	une	application	utilisant	les	entrées/sorties	bloquantes	pour	signaler	une	
+interruption	matérielle provenant	de	l’un	des	switches	de	la	carte	d’extension	de	ODROID-XU3.
+L’application	utilisera	le	service	select	pour	compter	le	nombre	d’interruptions.\\
+\textit{Remarque :	les	switches	non	pas	d’anti-rebond,	par	conséquent il	est	fort	probable	que	vous	
+comptiez	un	peu	trop	d’impulsions ;	effet	à	ignorer.	}
+\\\\
+\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsection{sysfs}
+\subsubsection{Exercice 7}
+\textbf{Donnée : } Développer	un	pilote	de	périphérique	orienté	caractère	permettant	de	valider	la	fonctionnalité	du	
+sysfs.	Le	pilote		offrira	des	attributs	de	périphérique	afin	pouvoir	lire	et	écrire	un	bloc	de	données	
+composé	de	quelques	membres	et	de	pouvoir	modifier	le	contenu	de	la	valeur	entière.	Seules	les	
+commandes	« echo » et	« cat » doivent	être	nécessaire	pour	manipuler	ces	attributs.\\\\
+\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsection{ioctl (optionnel)}
+\subsubsection{Exercice 8}
+Cet exercice n'a pas été réalisé.
+
+\subsection{procfs (optionnel)}
+\subsubsection{Exercice 9}
+Cet exercice n'a pas été réalisé.
+
+\subsection{Gestionnaires de périphériques}
+\subsubsection{Exercice 10}
+\textbf{Donnée : } Implémenter	à	l’intérieur	d’un	pilote	de	périphérique	orienté	caractère,	les	mécanismes	
+nécessaires	à	la	création	du	fichier	d’accès	au	pilote	(remplacement	de	la	commande	« mknod »)	
+par	l’utilitaire	« mdev »	de	la	BusyBox.\\\\
+\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+
+
+
+
+
+
+
