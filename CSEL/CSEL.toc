@@ -1,5 +1,5 @@
 \select@language {french}
-\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
 \contentsline {section}{\numberline {2}Environnement Linux Embarqu\IeC {\'e}}{3}{section.2}
 \contentsline {subsection}{\numberline {2.1}Objectifs}{3}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Informations pratiques}{3}{subsection.2.2}
@@ -34,3 +34,21 @@
 \contentsline {subsubsection}{\numberline {3.5.1}Exercice 8}{23}{subsubsection.3.5.1}
 \contentsline {subsection}{\numberline {3.6}Gestion des interruptions}{24}{subsection.3.6}
 \contentsline {subsubsection}{\numberline {3.6.1}Exercice 9}{24}{subsubsection.3.6.1}
+\contentsline {section}{\numberline {4}Programmation noyau : Pilotes de p\IeC {\'e}riph\IeC {\'e}riques}{25}{section.4}
+\contentsline {subsection}{\numberline {4.1}Pilotes orient\IeC {\'e}s m\IeC {\'e}moire}{25}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Exercice 1}{25}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Exercice 2}{26}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Pilotes orient\IeC {\'e}s caract\IeC {\`e}res}{26}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Exercice 3}{26}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Exercice 4}{27}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Exercice 5}{27}{subsubsection.4.2.3}
+\contentsline {subsection}{\numberline {4.3}Op\IeC {\'e}rations bloquantes}{28}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Exercice 6}{28}{subsubsection.4.3.1}
+\contentsline {subsection}{\numberline {4.4}sysfs}{28}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Exercice 7}{28}{subsubsection.4.4.1}
+\contentsline {subsection}{\numberline {4.5}ioctl (optionnel)}{28}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {4.5.1}Exercice 8}{28}{subsubsection.4.5.1}
+\contentsline {subsection}{\numberline {4.6}procfs (optionnel)}{29}{subsection.4.6}
+\contentsline {subsubsection}{\numberline {4.6.1}Exercice 9}{29}{subsubsection.4.6.1}
+\contentsline {subsection}{\numberline {4.7}Gestionnaires de p\IeC {\'e}riph\IeC {\'e}riques}{29}{subsection.4.7}
+\contentsline {subsubsection}{\numberline {4.7.1}Exercice 10}{29}{subsubsection.4.7.1}

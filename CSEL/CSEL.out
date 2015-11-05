@@ -33,3 +33,21 @@
 \BOOKMARK [3][-]{subsubsection.3.5.1}{Exercice 8}{subsection.3.5}% 33
 \BOOKMARK [2][-]{subsection.3.6}{Gestion des interruptions}{section.3}% 34
 \BOOKMARK [3][-]{subsubsection.3.6.1}{Exercice 9}{subsection.3.6}% 35
+\BOOKMARK [1][-]{section.4}{Programmation noyau : Pilotes de p\351riph\351riques}{}% 36
+\BOOKMARK [2][-]{subsection.4.1}{Pilotes orient\351s m\351moire}{section.4}% 37
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Exercice 1}{subsection.4.1}% 38
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Exercice 2}{subsection.4.1}% 39
+\BOOKMARK [2][-]{subsection.4.2}{Pilotes orient\351s caract\350res}{section.4}% 40
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Exercice 3}{subsection.4.2}% 41
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Exercice 4}{subsection.4.2}% 42
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Exercice 5}{subsection.4.2}% 43
+\BOOKMARK [2][-]{subsection.4.3}{Op\351rations bloquantes}{section.4}% 44
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Exercice 6}{subsection.4.3}% 45
+\BOOKMARK [2][-]{subsection.4.4}{sysfs}{section.4}% 46
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Exercice 7}{subsection.4.4}% 47
+\BOOKMARK [2][-]{subsection.4.5}{ioctl \(optionnel\)}{section.4}% 48
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Exercice 8}{subsection.4.5}% 49
+\BOOKMARK [2][-]{subsection.4.6}{procfs \(optionnel\)}{section.4}% 50
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Exercice 9}{subsection.4.6}% 51
+\BOOKMARK [2][-]{subsection.4.7}{Gestionnaires de p\351riph\351riques}{section.4}% 52
+\BOOKMARK [3][-]{subsubsection.4.7.1}{Exercice 10}{subsection.4.7}% 53

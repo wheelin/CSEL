@@ -52,5 +52,5 @@ module_init(skeleton_init);
 module_exit(skeleton_exit);
 
 MODULE_AUTHOR("Emilie Gsponer");
-MODULE_DESCRIPTION("Module Skeleton");
+MODULE_DESCRIPTION("Memory map");
 MODULE_LICENSE("GPL");
