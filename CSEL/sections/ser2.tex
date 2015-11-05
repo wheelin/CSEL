@@ -28,7 +28,28 @@ Remarque :	à	effectuer	après	les	exercices	des	pilotes	orientés	caractère\\\
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
+# modprobe mymodule                                                             
+[  854.599130] [c2] mod: successfully loaded with major 249                     
+# mknod /dev/mod c 249 0    
+# ./app_a /dev/mod                                                              
+[ 1166.619318] [c0] mod: open                                                   
+[ 1166.620800] [c0] mod: mmap                                                   
+[ 1166.623246] [c0] VMA open, virt b6f71000, phys 10000000                      
+[ 1166.628986] [c0] VMA close.                                                  
+[ 1166.631259] [c0] mod: release                                                
+file /dev/mod open                                                              
+Physical memory: Bit 31..12 : product id=0x65422                                
+Physical memory: Bit 11..8  : package id=0x0                                    
+Physical memory: Bit 7..4   : major revision=0x0                                
+Physical memory: Bit 3..0   : minor revision=0x1                                
 
+Virtual memory: Bit 31..12 : product id=0x43108                                 
+Virtual memory: Bit 11..8  : package id=0x3                                     
+Virtual memory: Bit 7..4   : major revision=0x2                                 
+Virtual memory: Bit 3..0   : minor revision=0xa                                 
+file /dev/mod close 
+# modprobe -r mymodule                                                          
+[ 1259.338388] [c0] mod: successfully unloaded   
 \end{lstlisting}
 
 \subsection{Pilotes orientés caractères}
@@ -74,6 +95,7 @@ permettant	de	stocker	les	données	échangées	avec	l’application	en	espace	ut
 \subsubsection{Exercice 5}
 \textbf{Donnée : } Développer	une	petite	application	en	espace	utilisateur	permettant	d’accéder	à	ces	pilotes	
 orientés	caractère.	L’application	devra	écrire	un	texte	dans	le	pilote	et	le	relire.\\\\
+\textbf{Complément : } Le module noyau a été repris de l'exercice 3.\\\\
 \textbf{Emplacement du code : }\\ \textit{/PilotesPeripheriques/exercice5-UserAccess/user}\\
 \textit{/PilotesPeripheriques/exercice5-UserAccess/noyau}\\
 
