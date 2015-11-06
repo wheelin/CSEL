@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.31)  5 NOV 2015 17:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.31)  6 NOV 2015 12:31
 entering extended mode
 **CSEL.tex
 (CSEL.tex
@@ -1032,51 +1032,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 105--106
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--138
+Underfull \hbox (badness 10000) in paragraph at lines 131--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--138
+Underfull \hbox (badness 10000) in paragraph at lines 131--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--140
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--151
+Underfull \hbox (badness 10000) in paragraph at lines 181--186
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--151
+Underfull \hbox (badness 10000) in paragraph at lines 181--186
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+Underfull \hbox (badness 10000) in paragraph at lines 202--206
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--171
+Underfull \hbox (badness 10000) in paragraph at lines 202--206
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--171
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
-
- []
-
-[29])
+)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 89.
  [30]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
@@ -1088,10 +1093,10 @@ Package rerunfilecheck Info: File `CSEL.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
  ) 
 Here is how much of TeX's memory you used:
- 11968 strings out of 493673
- 165778 string characters out of 3141526
+ 12051 strings out of 493673
+ 166844 string characters out of 3141526
  458916 words of memory out of 3000000
- 14531 multiletter control sequences out of 15000+200000
+ 14580 multiletter control sequences out of 15000+200000
  21324 words of font info for 51 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  30i,12n,49p,919b,1992s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1115,9 +1120,9 @@ C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
 x2488.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
 \dpi600\eccc2488.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmsy10.pfb>
-Output written on CSEL.pdf (30 pages, 1024684 bytes).
+Output written on CSEL.pdf (30 pages, 1033535 bytes).
 PDF statistics:
- 1711 PDF objects out of 1728 (max. 8388607)
- 612 named destinations out of 1000 (max. 500000)
+ 1754 PDF objects out of 2073 (max. 8388607)
+ 646 named destinations out of 1000 (max. 500000)
  470 words of extra memory for PDF output out of 10000 (max. 10000000)
 
