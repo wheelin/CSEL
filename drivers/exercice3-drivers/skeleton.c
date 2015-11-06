@@ -75,10 +75,11 @@ static struct file_operations fops =
 
 static int __init skeleton_init(void)
 {
-
+	int maj;
 	MKDEV(major_version, minor_version);
-	if(register_chrdev_region(device, 1, "misc_dev"))
+	if((maj = register_chrdev_region(device, 1, "misc_dev")))
 		return -1;
+	pr_info("major number : %d\n", maj);
 	cdev_init(&mod_cdev, &fops);
 	mod_cdev.owner = THIS_MODULE;
 	if(cdev_add(&mod_cdev, device, 1))

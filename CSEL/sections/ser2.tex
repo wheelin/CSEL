@@ -92,7 +92,45 @@ permettant	de	stocker	les	données	échangées	avec	l’application	en	espace	ut
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
-
+# mknod /dev/mydev_0 c 248 0
+# mknod /dev/mydev_1 c 248 1
+# 
+# 
+# echo -n "bonjour, monsieur" > /dev/mydev_0
+[12232.424660] [c1] skeleton : open operation, major version : 248, minor version : 0
+[12232.430827] [c1] skeleton : opened for reading and writing...
+[12232.436572] [c1] minor : 0
+[12232.436572] count = 17
+[12232.441568] [c1] skeleton : efault value=-14
+[12232.445802] [c1] skeleton : write operation... written=17
+[12232.451198] [c1] skeleton : release operation
+# echo -n "bien le bonjour, mademoiselle" > /dev/mydev_1
+[12254.024382] [c1] skeleton : open operation, major version : 248, minor version : 1
+[12254.030622] [c1] skeleton : opened for reading and writing...
+[12254.036288] [c1] minor : 1
+[12254.036288] count = 29
+[12254.041274] [c1] skeleton : efault value=-14
+[12254.045522] [c1] skeleton : write operation... written=29
+[12254.050909] [c1] skeleton : release operation
+# 
+# 
+# cat /dev/mydev_0
+[12278.473668] [c0] skeleton : open operation, major version : 248, minor version : 0
+[12278.479815] [c0] skeleton : opened for reading and writing...
+[12278.485576] [c0] skeleton : read operation... read=17
+[12278.490663] [c6] skeleton : read operation... read=0
+[12278.495527] [c6] skeleton : release operation
+bonjour, monsieur# 
+# 
+# 
+# cat /dev/mydev_1
+[12291.694063] [c0] skeleton : open operation, major version : 248, minor version : 1
+[12291.700284] [c7] skeleton : opened for reading and writing...
+[12291.706190] [c7] skeleton : read operation... read=29
+[12291.710985] [c7] skeleton : read operation... read=0
+[12291.715919] [c7] skeleton : release operation
+bien le bonjour, mademoiselle# 
+# 
 \end{lstlisting}
 
 \subsubsection{Exercice 5}

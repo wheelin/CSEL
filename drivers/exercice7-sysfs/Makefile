@@ -1,4 +1,5 @@
 ifneq ($(KERNELRELEASE),)
+
 obj-m += mymodule.o
 mymodule-objs := skeleton.o
 
@@ -14,6 +15,9 @@ all:
 clean:
 	$(MAKE) -C $(KDIR) M=$(PWD) clean
 
+MODPATH := /tftpboot/odroidxu3
+
+install:
+	$(MAKE) -C $(KDIR) M=$(PWD) INSTALL_MOD_PATH=$(MODPATH) modules_install
+
 endif
-
-
