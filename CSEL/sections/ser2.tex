@@ -224,7 +224,11 @@ commandes	« echo » et	« cat » doivent	être	nécessaire	pour	manipuler	ces	a
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
-
+# echo -n "salut" > /sys/devices/platform/skeleton/attr 
+# 
+# 
+# cat /sys/devices/platform/skeleton/attr 
+salut# 
 \end{lstlisting}
 
 \subsection{ioctl (optionnel)}
