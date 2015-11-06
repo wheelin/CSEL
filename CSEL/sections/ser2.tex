@@ -134,11 +134,46 @@ L’application	utilisera	le	service	select	pour	compter	le	nombre	d’interrupt
 \textit{Remarque :	les	switches	non	pas	d’anti-rebond,	par	conséquent il	est	fort	probable	que	vous	
 comptiez	un	peu	trop	d’impulsions ;	effet	à	ignorer.	}
 \\\\
-\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
+\textbf{Remarque : }L'application utilisateur attend de recevoir 5 interruptions des boutons avant s'arrêter.\\\\
+\textbf{Emplacement du code : }\\ \textit{/PilotesPeripheriques/exercice6-SelectButton/user}\\
+\textit{/PilotesPeripheriques/exercice6-SelectButton/noyau}\\
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
-
+# modprobe mymodule                                                             
+[   90.125005] [c2] mod: successfully loaded with major 249                     
+[   90.129074] [c2] Interrupt handler module loaded in kernel                   
+[   90.134167] Configuring pins[   90.137059] _gpio_request: gpio-176 (SW1) sta6
+[   90.142048] [c2] _gpio_request: gpio-177 (SW2) status -16                    
+[   90.147391] [c2] _gpio_request: gpio-168 (SW3) status -16                    
+[   90.152778] [c2] _gpio_request: gpio-164 (SW4) status -16                    
+[   90.158239] [c4] Configuring switches interrupts                             
+[   90.162625] Pins and interrupts have been configured.[   90.167598] Init waie
+# ./app_a /dev/mod                                                              
+[   97.905744] [c0] mod: open                                                   
+[   97.907156] [c0] Threads started                                             
+file /dev/mod open                                                              
+[  102.317965] [c0] Some switch has been pressed                                
+[  102.320893] [c2] Thread awake                                                
+Interrupt 1                                                                     
+[  103.728868] [c0] Some switch has been pressed                                
+[  103.731800] [c0] Thread awake                                                
+Interrupt 2                                                                     
+[  104.686291] [c0] Some switch has been pressed                                
+Interrupt 3                                                                     
+[  106.084775] [c0] Some switch has been pressed                                
+[  106.087702] [c1] Thread awake                                                
+Interrupt 4                                                                     
+[  107.048387] [c0] Some switch has been pressed                                
+[  107.051374] [c1] mod: release                                                
+Interrupt 5                                                                     
+[  107.707804] [c0] Some switch has been pressed                                
+[  107.710718] [c0] Thread awake                                                
+[  107.713669] [c1] Threads stopped                                             
+file /dev/mod close                                                             
+# modprobe -r mymodule                                                          
+[  119.950452] [c0] Freeing interrupts                                          
+[  119.952344] Interrupts freed[  119.955165] mod: successfully unloaded
 \end{lstlisting}
 
 \subsection{sysfs}
