@@ -93,13 +93,6 @@ static int __init skeleton_init(void)
 	mod_cdev.owner = THIS_MODULE;
 	if(cdev_add(&mod_cdev, device, num_devs))
 		return -1;
-	// gBuf = (char **)kmalloc(num_devs * sizeof(char*), GFP_KERNEL);
-	// if(gBuf == NULL) return -1;
-	// for (i = 0; i < num_devs; ++i)
-	// {
-	// 	gBuf[i] = (char *)kmalloc(200, GFP_KERNEL);
-	// 	if (gBuf[i] == NULL) return -1;
-	// }
 	pr_info("Linux module skeleton loaded\n");
 	return 0;
 }
@@ -107,11 +100,6 @@ static int __init skeleton_init(void)
 static void __exit skeleton_exit(void)
 {
 	int i;
-	// for (i = 0; i < num_devs; ++i)
-	// {
-	// 	kfree(gBuf[i]);
-	// }
-	// kfree(gBuf);
 	cdev_del(&mod_cdev);
 	unregister_chrdev_region(device, num_devs);
 	pr_info("Linux module skeleton unloaded\n");
