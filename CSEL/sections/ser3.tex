@@ -1,0 +1,48 @@
+\section{Programmation système : Système de fichiers}
+\subsection{Contexte}
+La	carte ODROID-XU3	Lite	est	équipé	d’un	petit	ventilateur	afin	d’évacuer	la	chaleur	produite	par	
+l’activité	du	microprocesseur.	La	vitesse	du	ventilateur	est	contrôlée par	un	PWM	(Pulser-Width	
+Modulation),	dont	le	rapport	de	cycle	(duty)	dépendra	de	la	température	du	microprocesseur.	Le	
+ventilateur	sera	régulé	sur	la	base	de	20kHz.		Sur	la	carte	ODROID-XU3	Lite	ce	PWM	peut	être	réalisé	
+avec	la	porte	d’entrée/sortie	"gpb2\_0".
+\subsection{Travail à réaliser}
+Sur	le	site	moodle	vous	trouverez	une	petite	application	qui	contrôle	la	vitesse	du	ventilateur.	Ce	code	
+n’a	pas	été	très	bien	programmé	et	utilise	le	100\%	d’un	cœur	du	processeur	(à	mesurer	avec	top).	
+Concevez	une	application	permettant	de	gérer	la	vitesse	de	rotation	du	ventilateur	de	l’ODROID-XU3	
+à	l’aide	des	trois	boutons	poussoir.
+Quelques	indications	pour	la	réalisation de	l’application :
+\begin{enumerate}
+\item Au	démarrage	le	duty	cycle	du	ventilateur	sera	réglé	à	50\%
+\item Utilisation	des	boutons	poussoir
+\begin{enumerate}
+\item « sw1 »	pour	augmenter	la	vitesse	du	ventilateur
+\item « sw2 »	pour	remettre	la	vitesse	du	ventilateur	à	sa	valeur	initiale
+\item « sw3 »	pour	diminuer	la	vitesse	du	ventilateur
+\item une	pression	continue	exercée	sur	un	bouton	indiquera	une	auto	incrémentation	
+ou	décrémentation	du	duty	cyle.
+\end{enumerate}
+\item Tous	les	changements	de	vitesse	du	ventilateur	seront	logger	avec	syslog	de	Linux.
+\item Le	multiplexage	des	entrées/sorties	devra	être	utilisé.
+\end{enumerate}
+
+\subsection{Travail réalisé}
+\subsubsection{Description}
+Tous les points de la donnée ont été implémentés. La fréquence du ventilateur a été augmentée à 50 kHz, car à 20kHz le ventilateur émet un son strident très agaçant.\\Pour le point de l'auto incrémentation, la duty cycle est augmenté/diminué de 2\% chaque 40 us quand un bouton est maintenu appuyé. Si par hasard, on maintient appuyé deux boutons en même temps, le programme attend qu'un des deux soit relâché pour changer le duty cycle.\\En plus des points demandés, les LEDs de la carte d'extensions sont utilisées.
+\begin{enumerate}
+	\item LED1: S'allume et s'éteint en fonction de la pression sur le switch 1.
+	\item LED2 : Clignote à la fréquence de la PWM. La vitesse est trop rapide pour la voir clignoter, on peut par contre observer un changement de luminosité entre un duty cycle proche de 0\% et un proche de 100\%.
+	\item LED3 : S'allume et s'éteint en fonction de la pression sur le switch 3.\\
+\end{enumerate} 
+
+\textbf{Emplacement du code : } \textit{/FanControl}
+
+\subsubsection{Configuration des GPIO}
+
+\subsubsection{Exécution du code}
+
+\subsubsection{Syslog}
+
+\subsubsection{Mesure de performance}
+
+\subsubsection{Amélioration possibles}
+Les switch n'ont pas d'anti-rebond. Parfois, l'état du bouton du programme ne correspond pas à l'état physique du bouton. La conséquence est que le duty cylcle s'incrémente/décrémente alors qu'aucun bouton n'est appuyé. Il faudrait implémenter un anti-rebond software. Ce point n'a pas été réalisé, car ce n'était pas l'objectif du labo. Si le problème se présente, il suffit de relancer le programme.

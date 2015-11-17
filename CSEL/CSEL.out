@@ -51,3 +51,13 @@
 \BOOKMARK [3][-]{subsubsection.4.6.1}{Exercice 9}{subsection.4.6}% 51
 \BOOKMARK [2][-]{subsection.4.7}{Gestionnaires de p\351riph\351riques}{section.4}% 52
 \BOOKMARK [3][-]{subsubsection.4.7.1}{Exercice 10}{subsection.4.7}% 53
+\BOOKMARK [1][-]{section.5}{Programmation syst\350me : Syst\350me de fichiers}{}% 54
+\BOOKMARK [2][-]{subsection.5.1}{Contexte}{section.5}% 55
+\BOOKMARK [2][-]{subsection.5.2}{Travail \340 r\351aliser}{section.5}% 56
+\BOOKMARK [2][-]{subsection.5.3}{Travail r\351alis\351}{section.5}% 57
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Description}{subsection.5.3}% 58
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Configuration des GPIO}{subsection.5.3}% 59
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Ex\351cution du code}{subsection.5.3}% 60
+\BOOKMARK [3][-]{subsubsection.5.3.4}{Syslog}{subsection.5.3}% 61
+\BOOKMARK [3][-]{subsubsection.5.3.5}{Mesure de performance}{subsection.5.3}% 62
+\BOOKMARK [3][-]{subsubsection.5.3.6}{Am\351lioration possibles}{subsection.5.3}% 63
