@@ -58,7 +58,7 @@
 \contentsline {subsection}{\numberline {5.3}Travail r\IeC {\'e}alis\IeC {\'e}}{32}{subsection.5.3}
 \contentsline {subsubsection}{\numberline {5.3.1}Description}{32}{subsubsection.5.3.1}
 \contentsline {subsubsection}{\numberline {5.3.2}Configuration des GPIO}{32}{subsubsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3}Ex\IeC {\'e}cution du code}{32}{subsubsection.5.3.3}
-\contentsline {subsubsection}{\numberline {5.3.4}Syslog}{32}{subsubsection.5.3.4}
-\contentsline {subsubsection}{\numberline {5.3.5}Mesure de performance}{32}{subsubsection.5.3.5}
-\contentsline {subsubsection}{\numberline {5.3.6}Am\IeC {\'e}lioration possibles}{32}{subsubsection.5.3.6}
+\contentsline {subsubsection}{\numberline {5.3.3}Ex\IeC {\'e}cution du code}{33}{subsubsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.4}Syslog}{33}{subsubsection.5.3.4}
+\contentsline {subsubsection}{\numberline {5.3.5}Mesure de performance}{34}{subsubsection.5.3.5}
+\contentsline {subsubsection}{\numberline {5.3.6}Am\IeC {\'e}lioration possibles}{35}{subsubsection.5.3.6}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.31)  17 NOV 2015 10:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.31)  17 NOV 2015 16:17
 entering extended mode
 **CSEL.tex
 (CSEL.tex
@@ -1086,29 +1086,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
-)
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--47
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+
+ []
+
+[33] <img/top2.png, id=1137, 724.7075pt x 463.7325pt>
+File: img/top2.png Graphic file (type png)
+ <use img/top2.png>
+Package pdftex.def Info: img/top2.png used on input line 92.
+(pdftex.def)             Requested size: 398.33858pt x 254.89798pt.
+
+<img/top1.png, id=1138, 724.7075pt x 463.7325pt>
+File: img/top1.png Graphic file (type png)
+ <use img/top1.png>
+Package pdftex.def Info: img/top1.png used on input line 100.
+(pdftex.def)             Requested size: 398.33858pt x 254.89798pt.
+ [34 <./img/top2.png>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
- [32]
+ [35 <./img/top1.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
  (CSEL.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
-
-
-Package rerunfilecheck Warning: File `CSEL.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `CSEL.out':
-(rerunfilecheck)             Before: 34F1B46A1681B702882614D100482AFA;4701
-(rerunfilecheck)             After:  ACA0038B62BD9217408BC874812CEC55;4702.
+Package rerunfilecheck Info: File `CSEL.out' has not changed.
+(rerunfilecheck)             Checksum: ACA0038B62BD9217408BC874812CEC55;4702.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
  ) 
 Here is how much of TeX's memory you used:
- 12171 strings out of 493673
- 168463 string characters out of 3141526
+ 12271 strings out of 493673
+ 169644 string characters out of 3141526
  458916 words of memory out of 3000000
- 14630 multiletter control sequences out of 15000+200000
+ 14692 multiletter control sequences out of 15000+200000
  21324 words of font info for 51 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  30i,12n,49p,919b,1941s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1132,9 +1161,9 @@ C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
 x2488.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
 \dpi600\eccc2488.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmsy10.pfb>
-Output written on CSEL.pdf (32 pages, 1059553 bytes).
+Output written on CSEL.pdf (35 pages, 1180037 bytes).
 PDF statistics:
- 1892 PDF objects out of 2073 (max. 8388607)
- 713 named destinations out of 1000 (max. 500000)
- 550 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1952 PDF objects out of 2073 (max. 8388607)
+ 749 named destinations out of 1000 (max. 500000)
+ 560 words of extra memory for PDF output out of 10000 (max. 10000000)
 
