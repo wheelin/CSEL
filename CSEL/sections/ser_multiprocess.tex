@@ -1,0 +1,41 @@
+\section{Programmation système : processus multiples}
+\subsection{Exercice 1}
+Concevez et développez une petite application mettant en oeuvre un des services de communication proposé par linux entre un processus parent et un processus enfant.
+Le processus enfant devra émettre quelques messages sous forme de texte vers le processus parent, lequel les affichera sur la console. Le mesage exit permettra de terminer l'application.\\
+Cette application devra impérativement capturer tous les signaux et les ignorer. Seul un message d'information sera affiché sur la console.\\
+Chemin des sources : mulitprocess, ex1_mutliprocess\\
+Voici l'output obtenu après lancement du programme:
+\begin{lstlisting}
+# ./app_a 
+In the main process.
+
+In the parent process
+
+In the children process.
+
+Enter a msg to send to the parent : bonojour
+bonojour will be written to the parent.
+Enter a msg to send to the parent : Received 50 from the children. String is : bonojour
+salut
+salut will be written to the parent.
+Enter a msg to send to the parent : Received 50 from the children. String is : salut
+hello
+hello will be written to the parent.
+Enter a msg to send to the parent : Received 50 from the children. String is : hello
+exit
+exit will be written to the parent.
+Received 50 from the children. String is : exit
+#
+\end{lstlisting}
+Le processus enfant demande à l'utilisateur de tapper quelque chose, qui est ensuite retransmis au parent, qui l'affiche. \\
+Ensuite, un second output montre que le SIGINT est géré pour afficher un message en écrivant \textlt{Reveived signal is :} suivi du type de signal. Dans le cas suivant, c'est un ctrl-c qui a été envoyé. 
+\begin{lstlisting}
+Enter a msg to send to the parent : Received 50 from the children. String is : 
+^CReceived signal is : Interrupt
+Received signal is : Interrupt
+ will be written to the parent.
+Enter a msg to send to the parent : Received 50 from the children. String is : 
+\end{lstlisting}
+
+\subsection{Travail à réaliser}
+
