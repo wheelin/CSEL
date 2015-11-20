@@ -5,7 +5,6 @@
 #include "linux/platform_device.h"
 
 static char sysfs_buf[1000];
-static int count = 0;
 
 static ssize_t skeleton_show_buf(struct device * dev,
 	struct device_attribute *attr, char *buf)
@@ -15,7 +14,7 @@ static ssize_t skeleton_show_buf(struct device * dev,
 }
 
 static ssize_t skeleton_store_buf(struct device * dev,
-	struct device_attribute, const char *buf, size_t count)
+	struct device_attribute *attr, const char *buf, size_t count)
 {
 	int len = sizeof(sysfs_buf) - 1;
 	if(len > count) len = count;
@@ -31,7 +30,7 @@ static void sysfs_dev_release(struct device *dev)
 
 }
 
-static struct platform_device sysfs_driver = {
+static struct platform_driver sysfs_driver = {
 	.driver = {.name = "skeleton",},
 };
 
@@ -43,15 +42,16 @@ static struct platform_device sysfs_device = {
 
 static int __init skeleton_init(void)
 {
+	int status;
 	sysfs_device.name = "own_dev";
 	sysfs_device.dev.devt = 1;
 
-	int status = 0;
+	status = 0;
 	if(status == 0)
 		status = platform_driver_register(&sysfs_driver);
 	if(status == 0)
 		status = platform_device_register(&sysfs_device);
-	if(status = 0)
+	if(status == 0)
 		status = device_create_file(&sysfs_device.dev, &dev_attr_attr);
 
 	pr_info("Linux module skeleton loaded\n");
