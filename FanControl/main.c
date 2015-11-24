@@ -1,27 +1,4 @@
-/**
- * Copyright 2015 University of Applied Sciences Western Switzerland / Fribourg
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *     http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * 
- * Project:	HEIA-FR / HES-SO MSE - MA-CSEL1 Laboratory
- *
- * Abstract: 	System programming -  file system
- *
- * Purpose:	ODROID-XU3 Lite silly fan control system
- *
- * Autĥor:	Daniel Gachet
- * Date:	05.11.2015
- */
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -60,7 +37,7 @@
 #define GPIO_LED3	"/sys/class/gpio/gpio19"
 #define LED3		"19"
 
-#define CLOCK_TIME_NS 20000
+#define CLOCK_TIME_NS 50000
 static int timerfd1;
 static int epollfd;
 static int duty_cycle;
@@ -359,7 +336,7 @@ int main(int argc, char* argv[])
 	int nr;
 	int fSw1,fSw2,fSw3;
 	int led1,led2,led3;
-	int timersElapsed = 0;
+	uint64_t timersElapsed = 0;
 	int i=0;
 	int time_counter = 0;
 
@@ -391,9 +368,9 @@ int main(int argc, char* argv[])
 	fSw1 = open_sw1();
 	fSw2 = open_sw2();
 	fSw3 = open_sw3();
-	read (fSw1, &timersElapsed,1);
-	read (fSw2, &timersElapsed,1);
-	read (fSw3, &timersElapsed,1);
+	read (fSw1, &timersElapsed,8);
+	read (fSw2, &timersElapsed,8);
+	read (fSw3, &timersElapsed,8);
 
 	while(1)
 	{
@@ -409,7 +386,7 @@ int main(int argc, char* argv[])
 			// Sw1 event : Up duty cycle
 			if(events[i].data.fd == fSw1)
 			{
-				read (fSw1, &timersElapsed,1);
+				read (fSw1, &timersElapsed,8);
 				sw1_state = !sw1_state;
 				if(sw1_state)
 				{
@@ -424,13 +401,13 @@ int main(int argc, char* argv[])
 			// Sw2 event : 50% duty cycle
 			else if(events[i].data.fd == fSw2)
 			{
-				read (fSw2, &timersElapsed,1);
+				read (fSw2, &timersElapsed,8);
 				setDutyCycle(50);
 			}
 			// Sw3 event : Down duty cycle
 			else if(events[i].data.fd == fSw3)
 			{
-				read (fSw3, &timersElapsed,1);
+				read (fSw3, &timersElapsed,8);
 				sw3_state = !sw3_state;
 				if(sw3_state)
 				{
@@ -445,6 +422,7 @@ int main(int argc, char* argv[])
 			// Timer event : Generate fan pwm
 			else if(events[i].data.fd == timerfd1)
 			{
+				read (timerfd1, &timersElapsed,8);
 				// 0% duty
 				if(duty_cycle == 0)
 				{
@@ -503,5 +481,4 @@ int main(int argc, char* argv[])
 	
 	return 0;
 }
-
 
