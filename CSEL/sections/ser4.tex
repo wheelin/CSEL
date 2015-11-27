@@ -1,0 +1,59 @@
+\section{Programmation système : Multiprocessing}
+\subsection{Processus, signaux et communication}
+\subsubsection{Exercice 1}
+\textbf{Donnée:} Concevez	et	développez	une	petite	application	mettant	en	œuvre	un	des	services	de	communication
+proposé	par	Linux	(p.ex.	« socketpair ») entre	un	processus	parent	et	un	processus	enfant.	
+Le	processus	enfant	devra	émettre	quelques	messages	sous	forme	de	texte	vers	le	processus	parent,	
+lequel	les	affichera	sur	la	console.	Le	message	« exit »	permettra	de	terminer	l’application.
+Cette	application	devra	impérativement	capturer	tous	les	signaux	et	les	ignorer.	Seul	un	message	
+d’information	sera	affiché	sur	la	console.\\\\
+\textbf{Emplacement du code : } \textit{/Multiprocessing/Exercice1-Comm}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsection{CGroups}
+\subsubsection{Exercice 2}
+\textbf{Donnée:} Concevez	une	petite	application	permettant	de	valider	la	capacité	des	groupes	de	contrôle	de	limiter	
+l’utilisation	de	la mémoire.	\\\\
+
+\textbf{Emplacement du code : } \textit{/Multiprocessing/}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\textbf{Réponse aux questions :}\\\\
+\textbf{a. Quel	effet	a	la	commande	 « echo \$\$ > … »	sur	les	cgroups ?}\\
+ee\\\\
+\textbf{b. Quel	est	le	comportement	du	sous-système	« memory »	lorsque	le	quota	de	mémoire	est	
+	épuisé ?	Pourrait-on	le	modifier ?	Si	oui,	comment ?}\\
+ee\\\\
+\textbf{c. Est-il	possible	de	surveiller/vérifier l’état	actuel	de	la	mémoire ?	Si	oui,	comment ?}\\
+ee\\\\
+
+\subsubsection{Exercice 3}
+\textbf{Donnée:} Afin	valider	la	capacité	des	groupes	de	contrôle	de	limiter	l’utilisation	des	CPU,	concevez	une	petite	application	composée	au	minimum	de	2	processus	utilisant	le	100\%	des	ressources	du	processeur.	\\\\
+
+\textbf{Emplacement du code : } \textit{/Multiprocessing/Exercice3-CPU}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\textbf{Réponse aux questions :}\\\\
+\textbf{a. Les	4	dernières	lignes	sont	obligatoires	pour	les	prochaines	commandes	fonctionnent	
+	correctement. Pouvez-vous	en	donner	la	raison ?}\\
+ee\\\\
+\textbf{b. Ouvrez	deux	shells	distincte	et	placez	une	dans	le	cgroup	high	et	l’autre	dans	le	cgroup	low\\	
+	Lancez	ensuite	votre	application	dans	chacune	des	shells\\
+	Quel	devrait	être	le	bon	comportement ?	Pouvez-vous	le	vérifier ?}\\
+ee\\\\
+\textbf{c. Sachant	que	l’attribut	cpu.shares permet	de	répartir	le	temps	CPU	entre	différents	
+	cgroups,	comment devrait-on	procéder	pour	lancer deux	tâches	distinctes	sur	le	cœur	6	de	
+	notre	processeur	et	attribuer	75\%	du	temps	CPU	à	la	première	tâche	et	25\%	à	la	deuxième ?}\\
+ee\\\\
