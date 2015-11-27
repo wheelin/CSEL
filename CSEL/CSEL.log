@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.31)  17 NOV 2015 16:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.10.31)  27 NOV 2015 20:51
 entering extended mode
 **CSEL.tex
 (CSEL.tex
@@ -742,61 +742,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--32
 
  []
 
-<img/vmConfig1.png, id=354, 279.444pt x 66.84975pt>
+[4] <img/vmConfig1.png, id=399, 279.444pt x 66.84975pt>
 File: img/vmConfig1.png Graphic file (type png)
- <use img/vmConfig1.png>
+
+<use img/vmConfig1.png>
 Package pdftex.def Info: img/vmConfig1.png used on input line 42.
 (pdftex.def)             Requested size: 398.33858pt x 95.29347pt.
-
-[4] <img/vmConfig2.png, id=372, 488.42474pt x 468.5505pt>
+ <img/vmConfig2.png, id=400, 488.42474pt x 468.5505pt>
 File: img/vmConfig2.png Graphic file (type png)
 
 <use img/vmConfig2.png>
 Package pdftex.def Info: img/vmConfig2.png used on input line 50.
 (pdftex.def)             Requested size: 398.33858pt x 382.14055pt.
- <img/vmConfig3.png, id=373, 316.7835pt x 224.037pt>
+ [5 <./img/vmConfig1.png>]
+<img/vmConfig3.png, id=409, 316.7835pt x 224.037pt>
 File: img/vmConfig3.png Graphic file (type png)
-
-<use img/vmConfig3.png>
+ <use img/vmConfig3.png>
 Package pdftex.def Info: img/vmConfig3.png used on input line 58.
 (pdftex.def)             Requested size: 398.33858pt x 281.71378pt.
- [5 <./img/vmConfig1.png> <./img/vmConfig2.png>]
-[6 <./img/vmConfig3.png>] [7]
-<img/eclipseConfig1.png, id=446, 283.0575pt x 194.52675pt>
+
+[6 <./img/vmConfig2.png>] [7 <./img/vmConfig3.png>] [8]
+<img/eclipseConfig1.png, id=480, 283.0575pt x 194.52675pt>
 File: img/eclipseConfig1.png Graphic file (type png)
 
 <use img/eclipseConfig1.png>
 Package pdftex.def Info: img/eclipseConfig1.png used on input line 154.
 (pdftex.def)             Requested size: 398.33858pt x 273.77516pt.
- [8]
-<img/eclipseConfig2.png, id=461, 726.715pt x 611.28375pt>
+ [9]
+<img/eclipseConfig2.png, id=495, 726.715pt x 611.28375pt>
 File: img/eclipseConfig2.png Graphic file (type png)
 
 <use img/eclipseConfig2.png>
 Package pdftex.def Info: img/eclipseConfig2.png used on input line 162.
 (pdftex.def)             Requested size: 398.33858pt x 335.06915pt.
- [9 <./img/eclipseConfig1.png>]
-<img/eclipseConfig3.png, id=468, 675.7245pt x 472.164pt>
+ [10 <./img/eclipseConfig1.png>]
+<img/eclipseConfig3.png, id=502, 675.7245pt x 472.164pt>
 File: img/eclipseConfig3.png Graphic file (type png)
 
 <use img/eclipseConfig3.png>
 Package pdftex.def Info: img/eclipseConfig3.png used on input line 170.
 (pdftex.def)             Requested size: 398.33858pt x 278.3366pt.
 
-<img/eclipseConfig4.png, id=469, 675.7245pt x 472.164pt>
+<img/eclipseConfig4.png, id=503, 675.7245pt x 472.164pt>
 File: img/eclipseConfig4.png Graphic file (type png)
 
 <use img/eclipseConfig4.png>
 Package pdftex.def Info: img/eclipseConfig4.png used on input line 177.
 (pdftex.def)             Requested size: 398.33858pt x 278.3366pt.
- [10 <./img/eclipseConfig2.png>]
-<img/eclipseConfig5.png, id=476, 969.02025pt x 617.9085pt>
+ [11 <./img/eclipseConfig2.png>]
+<img/eclipseConfig5.png, id=510, 969.02025pt x 617.9085pt>
 File: img/eclipseConfig5.png Graphic file (type png)
 
 <use img/eclipseConfig5.png>
 Package pdftex.def Info: img/eclipseConfig5.png used on input line 185.
 (pdftex.def)             Requested size: 469.47046pt x 299.36469pt.
- [11 <./img/eclipseConfig3.png> <./img/eclipseConfig4.png>] [12 <./img/eclipseC
+ [12 <./img/eclipseConfig3.png> <./img/eclipseConfig4.png>] [13 <./img/eclipseC
 onfig5.png>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 243.
 
@@ -806,8 +806,8 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 243.
- [13] [14]
-[15] [16]) (sections/ser1.tex
+ [14] [15]
+[16] [17]) (sections/ser1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--8
 
  []
@@ -822,7 +822,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--33
 
  []
 
-[17]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 42--44
 
  []
@@ -837,32 +837,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--69
 
  []
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 95--98
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--98
-
- []
-
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 118--120
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 159--163
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--163
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
 
  []
 
 [21]
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
+
+ []
+
+[22]
 Overfull \hbox (5.58113pt too wide) in paragraph at lines 196--197
 \T1/cmr/m/n/12 Source : [][]$\T1/cmtt/m/n/12 https : / / www . google . ch / ur
 l ? sa = t & rct = j & q = &esrc = s & source = web & cd = 3 & cad = rja &$
@@ -900,32 +900,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 209--213
 
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 248--251
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--251
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--266
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--266
-
- []
-
 [23]
+Underfull \hbox (badness 10000) in paragraph at lines 248--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--266
+
+ []
+
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
  []
 
-<img/interrupt_success.png, id=888, 573.64313pt x 219.06844pt>
+<img/interrupt_success.png, id=922, 573.64313pt x 219.06844pt>
 File: img/interrupt_success.png Graphic file (type png)
 
 <use img/interrupt_success.png>
@@ -941,7 +941,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 306--316
 
  []
 
-[24]) (sections/ser2.tex
+[25]) (sections/ser2.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
 
  []
@@ -961,7 +961,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
 
-[25 <./img/interrupt_success.png>]
+[26 <./img/interrupt_success.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 23--29
 
  []
@@ -991,7 +991,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--64
 
  []
 
-[26]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
@@ -1011,7 +1011,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
-[27]
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 137--142
 
  []
@@ -1031,7 +1031,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
-[28]
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 169--178
 
  []
@@ -1051,7 +1051,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
-[29]
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 219--224
 
  []
@@ -1066,7 +1066,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
-[30]
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 244--248
 
  []
@@ -1081,7 +1081,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
-) (sections/ser3.tex [31]
+) (sections/ser3.tex [32]
 Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
@@ -1106,49 +1106,189 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--47
 
  []
 
-[32]
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
-[33] <img/top2.png, id=1137, 724.7075pt x 463.7325pt>
+[34] <img/top2.png, id=1171, 724.7075pt x 463.7325pt>
 File: img/top2.png Graphic file (type png)
  <use img/top2.png>
 Package pdftex.def Info: img/top2.png used on input line 92.
 (pdftex.def)             Requested size: 398.33858pt x 254.89798pt.
 
-<img/top1.png, id=1138, 724.7075pt x 463.7325pt>
+<img/top1.png, id=1172, 724.7075pt x 463.7325pt>
 File: img/top1.png Graphic file (type png)
  <use img/top1.png>
 Package pdftex.def Info: img/top1.png used on input line 100.
 (pdftex.def)             Requested size: 398.33858pt x 254.89798pt.
- [34 <./img/top2.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
- [35 <./img/top1.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
- (CSEL.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
+ [35 <./img/top2.png>]) (sections/ser4.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--12
+
+ []
+
+[36 <./img/top1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 65--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+[39] <img/multiprocessCGroup.png, id=1280, 484.209pt x 311.36325pt>
+File: img/multiprocessCGroup.png Graphic file (type png)
+
+<use img/multiprocessCGroup.png>
+Package pdftex.def Info: img/multiprocessCGroup.png used on input line 149.
+(pdftex.def)             Requested size: 455.24408pt x 292.748pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--159
+
+ []
+
+
+Overfull \hbox (0.17645pt too wide) in paragraph at lines 156--159
+\T1/cmr/m/n/12 Voici les com-mandes uti-li-sées pour la confi-gu-ra-tion de-man
+-dée. Par dé-faut, l'at-tri-but cpu.shares
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--159
+
+ []
+
+[40 <./img/multiprocessCGroup.png>]
+<img/multiprocessCGroup2.png, id=1298, 484.209pt x 310.761pt>
+File: img/multiprocessCGroup2.png Graphic file (type png)
+
+<use img/multiprocessCGroup2.png>
+Package pdftex.def Info: img/multiprocessCGroup2.png used on input line 187.
+(pdftex.def)             Requested size: 455.24408pt x 292.18176pt.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
+ [41 <./img/multiprocessCGroup2.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
+
+(CSEL.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `CSEL.out' has not changed.
-(rerunfilecheck)             Checksum: ACA0038B62BD9217408BC874812CEC55;4702.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
+(rerunfilecheck)             Checksum: 122B1755577198DA7A51D6023908292C;5138.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
- 12271 strings out of 493673
- 169644 string characters out of 3141526
+ 12476 strings out of 493673
+ 172497 string characters out of 3141526
  458916 words of memory out of 3000000
- 14692 multiletter control sequences out of 15000+200000
+ 14774 multiletter control sequences out of 15000+200000
  21324 words of font info for 51 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 30i,12n,49p,919b,1941s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 31i,12n,49p,919b,1941s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \ectt1200.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\eccc1200.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
 our\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\f
 onts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk> <C:\Users\Emilie\AppData\Local\M
-iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1000.pk> <C:\Users\Emilie\AppD
-ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\
-Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk>
+iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Emilie\AppD
+ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1000.pk> <C:\Users\
+Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk>
  <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
 crm0800.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecbx1200.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
@@ -1161,9 +1301,9 @@ C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
 x2488.pk> <C:\Users\Emilie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
 \dpi600\eccc2488.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmsy10.pfb>
-Output written on CSEL.pdf (35 pages, 1180037 bytes).
+Output written on CSEL.pdf (41 pages, 1345951 bytes).
 PDF statistics:
- 1952 PDF objects out of 2073 (max. 8388607)
- 749 named destinations out of 1000 (max. 500000)
- 560 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2165 PDF objects out of 2487 (max. 8388607)
+ 867 named destinations out of 1000 (max. 500000)
+ 618 words of extra memory for PDF output out of 10000 (max. 10000000)
 

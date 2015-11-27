@@ -1,64 +1,70 @@
 \select@language {french}
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}
-\contentsline {section}{\numberline {2}Environnement Linux Embarqu\IeC {\'e}}{3}{section.2}
-\contentsline {subsection}{\numberline {2.1}Objectifs}{3}{subsection.2.1}
+\contentsline {section}{\numberline {2}Environnement Linux Embarqu\IeC {\'e}}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Objectifs}{4}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Informations pratiques}{4}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Gravure de la carte SD}{4}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Mise en place de l'infrastructure}{4}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Configuration de la machine virtuelle}{4}{subsubsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Acc\IeC {\`e}s ssh sans mot de passe}{6}{subsubsection.2.4.2}
-\contentsline {subsubsection}{\numberline {2.4.3}Cr\IeC {\'e}ation de l'espace de travail}{7}{subsubsection.2.4.3}
-\contentsline {subsection}{\numberline {2.5}Debugging de l'application}{8}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Test des diff\IeC {\'e}rents exemples propos\IeC {\'e}s}{12}{subsection.2.6}
-\contentsline {subsubsection}{\numberline {2.6.1}Fibonacci}{12}{subsubsection.2.6.1}
-\contentsline {subsubsection}{\numberline {2.6.2}Tracing}{13}{subsubsection.2.6.2}
-\contentsline {subsubsection}{\numberline {2.6.3}Core dumps}{13}{subsubsection.2.6.3}
-\contentsline {subsubsection}{\numberline {2.6.4}Backtrace}{14}{subsubsection.2.6.4}
-\contentsline {subsubsection}{\numberline {2.6.5}System calls}{14}{subsubsection.2.6.5}
-\contentsline {subsubsection}{\numberline {2.6.6}Memory leaks}{15}{subsubsection.2.6.6}
-\contentsline {subsection}{\numberline {2.7}Mise en production de l'ODROID-XU3}{15}{subsection.2.7}
-\contentsline {subsection}{\numberline {2.8}R\IeC {\'e}ponse aux questions}{16}{subsection.2.8}
-\contentsline {section}{\numberline {3}Programmation noyau : Module noyau}{17}{section.3}
-\contentsline {subsection}{\numberline {3.1}Module noyau}{17}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Exercice 1}{17}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Exercice 2}{19}{subsubsection.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.3}Exercice 3}{20}{subsubsection.3.1.3}
-\contentsline {subsection}{\numberline {3.2}Gestion de la m\IeC {\'e}moire, biblioth\IeC {\`e}ques et fonctions utiles}{21}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Exercice 4}{21}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Exercice 5}{21}{subsubsection.3.2.2}
-\contentsline {subsection}{\numberline {3.3}Acc\IeC {\`e}s aux entr\IeC {\'e}es/sorties}{22}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Exercice 6}{22}{subsubsection.3.3.1}
-\contentsline {subsection}{\numberline {3.4}Threads du noyau}{23}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Exercice 7}{23}{subsubsection.3.4.1}
-\contentsline {subsection}{\numberline {3.5}Mise en sommeil}{23}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}Exercice 8}{23}{subsubsection.3.5.1}
-\contentsline {subsection}{\numberline {3.6}Gestion des interruptions}{24}{subsection.3.6}
-\contentsline {subsubsection}{\numberline {3.6.1}Exercice 9}{24}{subsubsection.3.6.1}
-\contentsline {section}{\numberline {4}Programmation noyau : Pilotes de p\IeC {\'e}riph\IeC {\'e}riques}{25}{section.4}
-\contentsline {subsection}{\numberline {4.1}Pilotes orient\IeC {\'e}s m\IeC {\'e}moire}{25}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Exercice 1}{25}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Exercice 2}{26}{subsubsection.4.1.2}
-\contentsline {subsection}{\numberline {4.2}Pilotes orient\IeC {\'e}s caract\IeC {\`e}res}{27}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Exercice 3}{27}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}Exercice 4}{27}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}Exercice 5}{28}{subsubsection.4.2.3}
-\contentsline {subsection}{\numberline {4.3}Op\IeC {\'e}rations bloquantes}{29}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Exercice 6}{29}{subsubsection.4.3.1}
-\contentsline {subsection}{\numberline {4.4}sysfs}{30}{subsection.4.4}
-\contentsline {subsubsection}{\numberline {4.4.1}Exercice 7}{30}{subsubsection.4.4.1}
-\contentsline {subsection}{\numberline {4.5}ioctl (optionnel)}{31}{subsection.4.5}
-\contentsline {subsubsection}{\numberline {4.5.1}Exercice 8}{31}{subsubsection.4.5.1}
-\contentsline {subsection}{\numberline {4.6}procfs (optionnel)}{31}{subsection.4.6}
-\contentsline {subsubsection}{\numberline {4.6.1}Exercice 9}{31}{subsubsection.4.6.1}
-\contentsline {subsection}{\numberline {4.7}Gestionnaires de p\IeC {\'e}riph\IeC {\'e}riques}{31}{subsection.4.7}
-\contentsline {subsubsection}{\numberline {4.7.1}Exercice 10}{31}{subsubsection.4.7.1}
-\contentsline {section}{\numberline {5}Programmation syst\IeC {\`e}me : Syst\IeC {\`e}me de fichiers}{31}{section.5}
-\contentsline {subsection}{\numberline {5.1}Contexte}{31}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Travail \IeC {\`a} r\IeC {\'e}aliser}{31}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Travail r\IeC {\'e}alis\IeC {\'e}}{32}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Description}{32}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}Configuration des GPIO}{32}{subsubsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3}Ex\IeC {\'e}cution du code}{33}{subsubsection.5.3.3}
-\contentsline {subsubsection}{\numberline {5.3.4}Syslog}{33}{subsubsection.5.3.4}
-\contentsline {subsubsection}{\numberline {5.3.5}Mesure de performance}{34}{subsubsection.5.3.5}
-\contentsline {subsubsection}{\numberline {5.3.6}Am\IeC {\'e}lioration possibles}{35}{subsubsection.5.3.6}
+\contentsline {subsection}{\numberline {2.4}Mise en place de l'infrastructure}{5}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Configuration de la machine virtuelle}{5}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Acc\IeC {\`e}s ssh sans mot de passe}{7}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Cr\IeC {\'e}ation de l'espace de travail}{8}{subsubsection.2.4.3}
+\contentsline {subsection}{\numberline {2.5}Debugging de l'application}{9}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Test des diff\IeC {\'e}rents exemples propos\IeC {\'e}s}{13}{subsection.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}Fibonacci}{13}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}Tracing}{14}{subsubsection.2.6.2}
+\contentsline {subsubsection}{\numberline {2.6.3}Core dumps}{14}{subsubsection.2.6.3}
+\contentsline {subsubsection}{\numberline {2.6.4}Backtrace}{15}{subsubsection.2.6.4}
+\contentsline {subsubsection}{\numberline {2.6.5}System calls}{15}{subsubsection.2.6.5}
+\contentsline {subsubsection}{\numberline {2.6.6}Memory leaks}{16}{subsubsection.2.6.6}
+\contentsline {subsection}{\numberline {2.7}Mise en production de l'ODROID-XU3}{16}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}R\IeC {\'e}ponse aux questions}{17}{subsection.2.8}
+\contentsline {section}{\numberline {3}Programmation noyau : Module noyau}{18}{section.3}
+\contentsline {subsection}{\numberline {3.1}Module noyau}{18}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Exercice 1}{18}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Exercice 2}{20}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Exercice 3}{21}{subsubsection.3.1.3}
+\contentsline {subsection}{\numberline {3.2}Gestion de la m\IeC {\'e}moire, biblioth\IeC {\`e}ques et fonctions utiles}{22}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Exercice 4}{22}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Exercice 5}{22}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Acc\IeC {\`e}s aux entr\IeC {\'e}es/sorties}{23}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Exercice 6}{23}{subsubsection.3.3.1}
+\contentsline {subsection}{\numberline {3.4}Threads du noyau}{24}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Exercice 7}{24}{subsubsection.3.4.1}
+\contentsline {subsection}{\numberline {3.5}Mise en sommeil}{24}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Exercice 8}{24}{subsubsection.3.5.1}
+\contentsline {subsection}{\numberline {3.6}Gestion des interruptions}{25}{subsection.3.6}
+\contentsline {subsubsection}{\numberline {3.6.1}Exercice 9}{25}{subsubsection.3.6.1}
+\contentsline {section}{\numberline {4}Programmation noyau : Pilotes de p\IeC {\'e}riph\IeC {\'e}riques}{26}{section.4}
+\contentsline {subsection}{\numberline {4.1}Pilotes orient\IeC {\'e}s m\IeC {\'e}moire}{26}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Exercice 1}{26}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Exercice 2}{27}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Pilotes orient\IeC {\'e}s caract\IeC {\`e}res}{28}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Exercice 3}{28}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Exercice 4}{28}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Exercice 5}{29}{subsubsection.4.2.3}
+\contentsline {subsection}{\numberline {4.3}Op\IeC {\'e}rations bloquantes}{30}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Exercice 6}{30}{subsubsection.4.3.1}
+\contentsline {subsection}{\numberline {4.4}sysfs}{31}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Exercice 7}{31}{subsubsection.4.4.1}
+\contentsline {subsection}{\numberline {4.5}ioctl (optionnel)}{32}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {4.5.1}Exercice 8}{32}{subsubsection.4.5.1}
+\contentsline {subsection}{\numberline {4.6}procfs (optionnel)}{32}{subsection.4.6}
+\contentsline {subsubsection}{\numberline {4.6.1}Exercice 9}{32}{subsubsection.4.6.1}
+\contentsline {subsection}{\numberline {4.7}Gestionnaires de p\IeC {\'e}riph\IeC {\'e}riques}{32}{subsection.4.7}
+\contentsline {subsubsection}{\numberline {4.7.1}Exercice 10}{32}{subsubsection.4.7.1}
+\contentsline {section}{\numberline {5}Programmation syst\IeC {\`e}me : Syst\IeC {\`e}me de fichiers}{32}{section.5}
+\contentsline {subsection}{\numberline {5.1}Contexte}{32}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Travail \IeC {\`a} r\IeC {\'e}aliser}{32}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Travail r\IeC {\'e}alis\IeC {\'e}}{33}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Description}{33}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Configuration des GPIO}{33}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}Ex\IeC {\'e}cution du code}{34}{subsubsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.4}Syslog}{34}{subsubsection.5.3.4}
+\contentsline {subsubsection}{\numberline {5.3.5}Mesure de performance}{35}{subsubsection.5.3.5}
+\contentsline {subsubsection}{\numberline {5.3.6}Am\IeC {\'e}lioration possibles}{36}{subsubsection.5.3.6}
+\contentsline {section}{\numberline {6}Programmation syst\IeC {\`e}me : Multiprocessing}{36}{section.6}
+\contentsline {subsection}{\numberline {6.1}Processus, signaux et communication}{36}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Exercice 1}{36}{subsubsection.6.1.1}
+\contentsline {subsection}{\numberline {6.2}CGroups}{37}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Exercice 2}{37}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Exercice 3}{38}{subsubsection.6.2.2}
