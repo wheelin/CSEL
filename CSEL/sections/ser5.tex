@@ -1,0 +1,165 @@
+\section{Optimisation : Performances}
+\subsection{Installation de perf}
+
+\subsection{Prise en main de perf}
+\subsubsection{Exercice 1}
+\textbf{Donnée : } Décrivez	brièvement	ce	que	sont	les	évènements	suivants	:
+\begin{enumerate}
+	\item instructions:
+	\item cache-misses:
+	\item branch-misses:
+	\item L1-dcache-load-misses:
+	\item cpu-migrations:
+	\item context-switches:
+\end{enumerate}
+
+\subsubsection{Exercice 2}
+\textbf{Donnée : } Compilez	(en	utilisant	le	Makefile	fourni)	et	exécutez	le	programme	situé	dans	le	dossier	exercices/01	
+en	utilisant	la	commande	“perf	stat”
+\\\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsubsection{Exercice 3}
+\textbf{Donnée : } Ouvrez	maintenant	le	fichier	“main.c”	et	analysez	le	code.
+Ce	programme	contient	une	erreur	triviale	qui	empêche	une	utilisation	optimale	du	cache.	De	quelle	
+erreur	s'agit-il	?\\\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsubsection{Exercice 4}
+\textbf{Donnée : } Corrigez	“l'erreur”,	recompilez	et	mesurez	à	nouveau	le	temps	d'exécution	(soit	avec	perf	stat,	soit	
+avec	la	commande	time).	Quelle	amélioration	constatez-vous	?\\\\
+\textbf{Emplacement du code : } \textit{}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsubsection{Exercice 5}
+\textbf{Donnée : } Relevez	les	valeurs	du	compteur	L1-dcache-load-misses	pour	les	deux	versions	de	l'application.	Quelle	
+facteur	constatez-vous	entre	les	deux	valeurs	?\\\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsubsection{Exercice 6}
+\textbf{Donnée : } Lors	de	la	présentation	de	l'outil	perf,	on	a	vu	que	celui-ci	permettait	de	profiler	une	application	avec	
+très	peu	d'impacts	sur	les	performances.	En	utilisant	la	commande	time,	mesurez	le	temps	d'exécution	
+de	notre	application	ex1	avec	et	sans	la	commande	perf	stat.\\\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsection{Analyse et optimisation d'un programme}
+Sur	la	base	du	programme	situé	dans	le	dossier	exercices/02/
+\subsubsection{Exercice 1}
+\textbf{Donnée : } Décrire	en	quelques	mots	ce	que	fait	ce	programme\\\\
+
+\subsubsection{Exercice 2}
+\textbf{Donnée : } Compilez	le	programme	à	l'aide	du	Makefile	joint.
+Mesurez	le	temps	d'exécution\\\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsubsection{Exercice 3}
+\textbf{Donnée : } Avant	la	fonction	int	main(),	ajoutez	la	méthode	suivante :
+static int compare (const void* a, const void* b)
+{return (short*)a - (short*)b;}
+Avant	« long	long	sum	=	0; »,	ajoutez	le	code	suivant :
+qsort(data, SIZE, sizeof(data[0]), compare);
+Compilez	et	mesurez	le	temps	d'exécution	de	la	version	modifiée\\\\
+\textbf{Emplacement du code : } \textit{}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsubsection{Exercice 4}
+\textbf{Donnée : } Vous	observez	sans	doute	une	nette	amélioration	sur	le	temps	d'exécution.
+A	l'aide	de	l'outil	perf	et	de	sa	sous-commande	'stat',	en	utilisant	différents	compteurs	déterminez	
+pourquoi	le	programme	modifié	s'exécute	plus	rapidement.\\\\
+\textbf{Emplacement du code : } \textit{}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsection{Parsing de logs apache}
+\subsubsection{Exercice 1}
+\textbf{Donnée : } Compilez	l'application	en	utilisant	le	Makefile	fourni	et	mesurez sur	la	machine	virtuelle son	temps	
+d'exécution	avec	la	commande	“time”.\\\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsubsection{Exercice 2}
+\textbf{Donnée : } Nous	allons	maintenant	profiler	l'application	avec	perf	record	avec	l'option	-g.
+\begin{lstlisting}
+$ perf record -g ./read-apache-logs access_log_NASA_Jul95_samples
+\end{lstlisting}
+L'exécution	de	cette	commande	doit	produire	un	fichier	de	résultat	perf,	nommé	perf.data.	Si	l'on	
+exécute	une	nouvelle	fois	la	commande,	ce	fichier	sera	copié	vers	perf.data.old et	un	nouveau	
+perf.data	correspondant	à	la	dernière	exécution	sera	créé.
+A	quoi	sert	l'option	-g	?	En	quoi	son	résultat	être	utile	?\\\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsubsection{Exercice 3}
+\textbf{Donnée : } Nous	pouvons	maintenant	analyser	les	données	collectées	par	perf	avec	la	commande	perf	report.	
+Cette	commande	lance	un	outil	interactif	(interface	console de	type	“ncurses”):	il	est	donc	possible	
+d'interagir avec	les	touches	du	clavier.Chaque	ligne	représente	une	fonction,	celles	récoltant	le	plus	d'évènements	sont	montrées	en	haut.	
+En	vous	basant sur	les	informations	disponibles	dans	le	wiki	de	perf	
+(\url{https://perf.wiki.kernel.org/index.php/Tutorial}),	décrivez	ce	que	représente	chaque	colonne.\\\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsubsection{Exercice 4}
+\textbf{Donnée : } Sur	la	capture	ci-dessus,	on	voit	par	exemple	que	la	majorité	des	cycles	de	l'application	sont	passés	
+dans	la	fonction	std::string::size() qui	est	contenue	dans	la	librairie	standard.	Il	nous	manque	
+cependant	une	information	capitale :	quelle	fonction	de	notre	application	fait	appel	à	cette	fonction	?	
+Grâce	à	l'option	-g passée	à	perf	record,	nous	pouvons	afficher	le	call-graph	complet.	Il	suffit	de	
+naviguer	dans	l'interface	et	développer	la	ligne	std::string::size() avec	la	touche	“Enter”.	
+Avec	les	instructions	précédentes,	déterminez quelle	fonction	de	notre	application	fait	(indirectement)	
+appel	à	std::string::size().\\\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsubsection{Exercice 5}
+\textbf{Donnée : } Maintenant	que	vous	savez	quelle	fonction	utilise	le	plus	de	ressources	CPU,	trouvez	une	optimisation	
+du	code	permettant	de	réduire	drastiquement	le	temps	d'exécution	(vous	devriez	arriver	à	quelques	
+dixièmes	de	secondes	pour	le	fichier	sample).\\\\
+\textbf{Emplacement du code : } \textit{}\\
+
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+
+\end{lstlisting}
+
