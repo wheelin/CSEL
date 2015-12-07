@@ -1,6 +1,6 @@
 \section{Optimisation : Performances}
 \subsection{Installation de perf}
-
+En suivant pas à pas les instructions de la donnée, perf a pu être installé sans aucun problème sur la machine virtuelle.
 \subsection{Prise en main de perf}
 \subsubsection{Exercice 1}
 \textbf{Donnée : } Décrivez	brièvement	ce	que	sont	les	évènements	suivants	:
@@ -19,27 +19,64 @@ en	utilisant	la	commande	“perf	stat”
 \\\\
 
 \textbf{Exécution du code : } \\
+Le code s'exécute jusqu'à ce qu'on l'interrompe avec ctrl-c par exemple. Un fois l'application interrompues, les mesures de performance s'affichent. Les mesures relevées sont les compteurs de context-switches et d'instruction ainsi que le temps d'exécution de l'application.\\
 \begin{lstlisting}
+lmi@csel1:~$ cd workspace/csel1/environment/exercices/01/
+lmi@csel1:~/workspace/csel1/environment/exercices/01$ make
+\end{lstlisting}
+
+\begin{lstlisting}
+# perf stat ./ex1 
+
+Performance counter stats for './ex1':
+...        
+56 context-switches          #    0.001 K/sec                  
+... 
+10453003007 instructions              #    0.11  insns per cycle        
+...
+45.705296089 seconds time elapsed
+
 
 \end{lstlisting}
+On constate que l'exécution du code prend énormément de temps
 
 \subsubsection{Exercice 3}
 \textbf{Donnée : } Ouvrez	maintenant	le	fichier	“main.c”	et	analysez	le	code.
 Ce	programme	contient	une	erreur	triviale	qui	empêche	une	utilisation	optimale	du	cache.	De	quelle	
 erreur	s'agit-il	?\\\\
+L'erreur vient du fait que l'on navigue dans le tableau de ligne en ligne. Cela donne énormément de travaille à la cache qui doit aller chercher dans la RAM à chaque incrément de colonne.
+En navigant dans le tableau de colonne en colonne, la cache à moins de travaille, car elle peut charger une ligne entière, l'adresse ne change pas. Le temps d'exécution du code devrait être nettement plus rapide.\\
 
-\textbf{Exécution du code : } \\
+\textbf{Modification du code : } \\
 \begin{lstlisting}
-
+for (k = 0; k < 50; k++)
+{
+	for (i = 0; i < SIZE; i++)
+	{
+		for (j = 0; j < SIZE; j++)
+		{
+			//array[j][i]++;
+			array[i][j]++;
+		}
+	}
+}
 \end{lstlisting}
 
 \subsubsection{Exercice 4}
 \textbf{Donnée : } Corrigez	“l'erreur”,	recompilez	et	mesurez	à	nouveau	le	temps	d'exécution	(soit	avec	perf	stat,	soit	
 avec	la	commande	time).	Quelle	amélioration	constatez-vous	?\\\\
-\textbf{Emplacement du code : } \textit{}\\
-
+On constate que l'exécution de l'application est environ 15 fois plus rapide. La cache à moins besoin d'aller chercher des informations dans la RAM.\\\\
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
+# perf stat ./ex1 
+
+Performance counter stats for './ex1':
+...      
+3 context-switches          #    0.001 K/sec                  
+...  
+6552198916 instructions              #    1.06  insns per cycle        
+...
+3.105906000 seconds time elapsed
 
 \end{lstlisting}
 
@@ -47,10 +84,30 @@ avec	la	commande	time).	Quelle	amélioration	constatez-vous	?\\\\
 \textbf{Donnée : } Relevez	les	valeurs	du	compteur	L1-dcache-load-misses	pour	les	deux	versions	de	l'application.	Quelle	
 facteur	constatez-vous	entre	les	deux	valeurs	?\\\\
 
-\textbf{Exécution du code : } \\
+\textbf{Exécution du code de base: } \\
 \begin{lstlisting}
+# perf stat -e L1-dcache-load-misses ./ex1 
+
+Performance counter stats for './ex1':
+
+1252652488 L1-dcache-load-misses                                       
+
+45.638627964 seconds time elapsed
+\end{lstlisting}
+
+\textbf{Exécution du code modifié: } \\
+\begin{lstlisting}
+# perf stat -e L1-dcache-load-misses ./ex1 
+
+Performance counter stats for './ex1':
+
+78861576 L1-dcache-load-misses                                       
+
+3.097171626 seconds time elapsed
 
 \end{lstlisting}
+
+On obtient un facteur d'environ 15.9 entre les deux exécution. Cela prouve que notre modification a une réelle influence sur la cache.
 
 \subsubsection{Exercice 6}
 \textbf{Donnée : } Lors	de	la	présentation	de	l'outil	perf,	on	a	vu	que	celui-ci	permettait	de	profiler	une	application	avec	

@@ -72,19 +72,19 @@
 \contentsline {subsection}{\numberline {7.1}Installation de perf}{45}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Prise en main de perf}{45}{subsection.7.2}
 \contentsline {subsubsection}{\numberline {7.2.1}Exercice 1}{45}{subsubsection.7.2.1}
-\contentsline {subsubsection}{\numberline {7.2.2}Exercice 2}{45}{subsubsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.2}Exercice 2}{46}{subsubsection.7.2.2}
 \contentsline {subsubsection}{\numberline {7.2.3}Exercice 3}{46}{subsubsection.7.2.3}
-\contentsline {subsubsection}{\numberline {7.2.4}Exercice 4}{46}{subsubsection.7.2.4}
-\contentsline {subsubsection}{\numberline {7.2.5}Exercice 5}{46}{subsubsection.7.2.5}
-\contentsline {subsubsection}{\numberline {7.2.6}Exercice 6}{46}{subsubsection.7.2.6}
-\contentsline {subsection}{\numberline {7.3}Analyse et optimisation d'un programme}{47}{subsection.7.3}
-\contentsline {subsubsection}{\numberline {7.3.1}Exercice 1}{47}{subsubsection.7.3.1}
-\contentsline {subsubsection}{\numberline {7.3.2}Exercice 2}{47}{subsubsection.7.3.2}
-\contentsline {subsubsection}{\numberline {7.3.3}Exercice 3}{47}{subsubsection.7.3.3}
-\contentsline {subsubsection}{\numberline {7.3.4}Exercice 4}{47}{subsubsection.7.3.4}
-\contentsline {subsection}{\numberline {7.4}Parsing de logs apache}{48}{subsection.7.4}
-\contentsline {subsubsection}{\numberline {7.4.1}Exercice 1}{48}{subsubsection.7.4.1}
-\contentsline {subsubsection}{\numberline {7.4.2}Exercice 2}{48}{subsubsection.7.4.2}
-\contentsline {subsubsection}{\numberline {7.4.3}Exercice 3}{48}{subsubsection.7.4.3}
-\contentsline {subsubsection}{\numberline {7.4.4}Exercice 4}{49}{subsubsection.7.4.4}
-\contentsline {subsubsection}{\numberline {7.4.5}Exercice 5}{49}{subsubsection.7.4.5}
+\contentsline {subsubsection}{\numberline {7.2.4}Exercice 4}{47}{subsubsection.7.2.4}
+\contentsline {subsubsection}{\numberline {7.2.5}Exercice 5}{47}{subsubsection.7.2.5}
+\contentsline {subsubsection}{\numberline {7.2.6}Exercice 6}{48}{subsubsection.7.2.6}
+\contentsline {subsection}{\numberline {7.3}Analyse et optimisation d'un programme}{48}{subsection.7.3}
+\contentsline {subsubsection}{\numberline {7.3.1}Exercice 1}{48}{subsubsection.7.3.1}
+\contentsline {subsubsection}{\numberline {7.3.2}Exercice 2}{48}{subsubsection.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.3}Exercice 3}{48}{subsubsection.7.3.3}
+\contentsline {subsubsection}{\numberline {7.3.4}Exercice 4}{49}{subsubsection.7.3.4}
+\contentsline {subsection}{\numberline {7.4}Parsing de logs apache}{49}{subsection.7.4}
+\contentsline {subsubsection}{\numberline {7.4.1}Exercice 1}{49}{subsubsection.7.4.1}
+\contentsline {subsubsection}{\numberline {7.4.2}Exercice 2}{49}{subsubsection.7.4.2}
+\contentsline {subsubsection}{\numberline {7.4.3}Exercice 3}{50}{subsubsection.7.4.3}
+\contentsline {subsubsection}{\numberline {7.4.4}Exercice 4}{50}{subsubsection.7.4.4}
+\contentsline {subsubsection}{\numberline {7.4.5}Exercice 5}{50}{subsubsection.7.4.5}
