@@ -195,8 +195,15 @@ d'exécution	avec	la	commande	“time”.\\\\
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
+time ./read-apache-logs access_log_NASA_Jul95_samples 
+Processing log file access_log_NASA_Jul95_samples
+Found 14867 unique Hosts/IPs
 
+real	0m19.116s
+user	0m19.130s
+sys	0m0.003s
 \end{lstlisting}
+Le code a été executé sur une machine Archlinux, kernel 4.2.5-1, Intel Core I5 Broadwell.
 
 \subsubsection{Exercice 2}
 \textbf{Donnée : } Nous	allons	maintenant	profiler	l'application	avec	perf	record	avec	l'option	-g.
@@ -208,10 +215,7 @@ exécute	une	nouvelle	fois	la	commande,	ce	fichier	sera	copié	vers	perf.data.ol
 perf.data	correspondant	à	la	dernière	exécution	sera	créé.
 A	quoi	sert	l'option	-g	?	En	quoi	son	résultat	être	utile	?\\\\
 
-\textbf{Exécution du code : } \\
-\begin{lstlisting}
-
-\end{lstlisting}
+L'option \textbf{-g} active l'enregistrement du call graph du programme. Ceci permet de voir les appels de fonctions, 
 
 \subsubsection{Exercice 3}
 \textbf{Donnée : } Nous	pouvons	maintenant	analyser	les	données	collectées	par	perf	avec	la	commande	perf	report.	
@@ -220,10 +224,13 @@ d'interagir avec	les	touches	du	clavier.Chaque	ligne	représente	une	fonction,	c
 En	vous	basant sur	les	informations	disponibles	dans	le	wiki	de	perf	
 (\url{https://perf.wiki.kernel.org/index.php/Tutorial}),	décrivez	ce	que	représente	chaque	colonne.\\\\
 
-\textbf{Exécution du code : } \\
-\begin{lstlisting}
-
-\end{lstlisting}
+\begin{enumerate}
+\item Cette colomne décrit le poucentage de temps par rapport au programme qui est passé dans cette fonction.
+\item La seconde reporte le processus du quel les échantillons ont été pris. Dans le mode par-thread/par-processus, c'est toujours le nom de la commande monitorée. 
+\item Celle-ci montre le binaire duquel proviennent les échantillons. Si le programme est linké dynamiquent, des noms de librairies peuvent apparaitre.  
+\item La quatrième montre les privilèges alloués de la section prise en compte au moment où elle a été échantillonnée.
+\item La dernière donne le nom du symbole, comme par exemple le nom de la fonction monitorée.
+\end{enumerate}
 
 \subsubsection{Exercice 4}
 \textbf{Donnée : } Sur	la	capture	ci-dessus,	on	voit	par	exemple	que	la	majorité	des	cycles	de	l'application	sont	passés	
@@ -234,19 +241,73 @@ naviguer	dans	l'interface	et	développer	la	ligne	std::string::size() avec	la	to
 Avec	les	instructions	précédentes,	déterminez quelle	fonction	de	notre	application	fait	(indirectement)	
 appel	à	std::string::size().\\\\
 
-\textbf{Exécution du code : } \\
-\begin{lstlisting}
 
+\begin{lstlisting}
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size                                                                              ▒
+     __gnu_cxx::__ops::_Iter_equals_val<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>::operator()<__gnu_cxx::__normal_iterator<▒
+     std::__find_if<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_strin▒
+     std::__find_if<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_strin▒
+     std::find<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<cha▒
+     HostCounter::isNewHost                                                                                                                                             ▒
+     HostCounter::notifyHost                                                                                                                                            ▒
+     ApacheAccessLogAnalyzer::processFile                                                                                                                               ▒
+     main                                                                                                                                                               ▒
+     __libc_start_main                                                                                                                                                  ▒
+     0x128e258d4c544155 
 \end{lstlisting}
+Astuce : l'aide apparait avec la touche \textbf{?} et un filtrage peut être effectué grâce à \textbf{/}, ce qui fait apparaitre une petite case de dialogue où on peut entrer une recherche.
 
 \subsubsection{Exercice 5}
 \textbf{Donnée : } Maintenant	que	vous	savez	quelle	fonction	utilise	le	plus	de	ressources	CPU,	trouvez	une	optimisation	
 du	code	permettant	de	réduire	drastiquement	le	temps	d'exécution	(vous	devriez	arriver	à	quelques	
 dixièmes	de	secondes	pour	le	fichier	sample).\\\\
-\textbf{Emplacement du code : } \textit{}\\
+\textbf{Emplacement du code : } \textit{HostCounter.h}
+\begin{lstlisting}
+#include <string>
+#include <set>
+
+class HostCounter
+{
+    public:
+        HostCounter();
+        void notifyHost(std::string hostname);
+        int getNbOfHosts();
+    private:
+        bool isNewHost(std::string hostname);
+        std::set< std::string > mySetOfHots;
+};
+\end{lstlisting}
+
+\textbf{Emplacement du code : } \textit{HostCounter.cpp}
+\begin{lstlisting}
+#include "HostCounter.h"
+#include <set>
+
+HostCounter::HostCounter(){
+}
+
+bool HostCounter::isNewHost(std::string hostname){
+    return mySetOfHots.find(hostname) == mySetOfHots.end();
+}
+
+void HostCounter::notifyHost(std::string hostname){
+    if(isNewHost(hostname))
+        mySetOfHots.insert(hostname);
+}
+
+int HostCounter::getNbOfHosts(){
+    return mySetOfHots.size();
+}
+\end{lstlisting}
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
+time ./read-apache-logs access_log_NASA_Jul95_samples 
+Processing log file access_log_NASA_Jul95_samples
+Found 14867 unique Hosts/IPs
 
+real	0m0.229s
+user	0m0.223s
+sys	0m0.003s
 \end{lstlisting}
 
