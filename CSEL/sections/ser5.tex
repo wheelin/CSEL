@@ -153,16 +153,23 @@ La mesure de temps est affichée en milisecondes. On constate que la commande pe
 Sur	la	base	du	programme	situé	dans	le	dossier	exercices/02/
 \subsubsection{Exercice 1}
 \textbf{Donnée : } Décrire	en	quelques	mots	ce	que	fait	ce	programme\\\\
-
+Le programme est décomposé en deux parties:
+\begin{itemize}
+\item Première boucle générant un nombre aléatoire inférieur à 256 et supérieur ou égal à 0 qu'on place ensuite dans un tableau de 32768 positions.
+\item Boucle impriquée, où on somme 100000 fois chaque nombre supérieur ou égal à 128 présent dans le tableau cité précédemment.
+\end{itemize}
 \subsubsection{Exercice 2}
 \textbf{Donnée : } Compilez	le	programme	à	l'aide	du	Makefile	joint.
 Mesurez	le	temps	d'exécution\\\\
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
-
+#time ./ex2 > /dev/null
+real    0m 27.58s
+user    0m 27.57s
+sys 0m 0.00s
 \end{lstlisting}
-
+On obtient donc 27.58s avec ce type de mesure.
 \subsubsection{Exercice 3}
 \textbf{Donnée : } Avant	la	fonction	int	main(),	ajoutez	la	méthode	suivante :
 static int compare (const void* a, const void* b)
@@ -171,11 +178,23 @@ Avant	« long	long	sum	=	0; »,	ajoutez	le	code	suivant :
 qsort(data, SIZE, sizeof(data[0]), compare);
 Compilez	et	mesurez	le	temps	d'exécution	de	la	version	modifiée\\\\
 \textbf{Emplacement du code : } \textit{}\\
-
+Avant que la somme soit calculée, un tri est effectué sur le tableau contenant les nombres aléatoires.\\
+Voici la fonction de tri:
+\begin{lstlisting}
+static int compare (const void * a, const void * b)
+{
+    return *(short*)a - *(short*)b;
+}
+\end{lstlisting}
+On obtient alors avec la commande suivante:
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
-
+# time ./ex2 > /dev/null 
+real    0m 6.95s
+user    0m 6.94s
+sys 0m 0.00s
 \end{lstlisting}
+un temps environ 4 fois moindre de 6.94s.
 
 \subsubsection{Exercice 4}
 \textbf{Donnée : } Vous	observez	sans	doute	une	nette	amélioration	sur	le	temps	d'exécution.
