@@ -9,7 +9,7 @@ Cette première partie a été exécutée sur la cible ODROID4.
 \begin{enumerate}
 	\item instructions: Compte le nombre d'instructions effectuées durant l'exécution du programme.
 	\item cache-misses: Compte le nombre de cache-misses, c'est à dire le nombre de fois où la mémoire cache n'avait pas l'information désirée et a dû aller la chercher dans la mémoire principale.
-	\color{red}\item branch-misses: \\
+	\item branch-misses: Les branch surviennent lorsqu'il y a par exemple des if-else. L'exécution est conditionnelle et donc pas toujours identique. Le système possède des algorithmes statistiques qui prévoient à l'avant comment le code sera exécuté (if ou else). Si la prédiction de l'algorithme est fausse, cela va incrémenté le compteur de branch-misses.
 \end{enumerate}
 
 \textbf{Hardware cache event}
@@ -243,16 +243,16 @@ appel	à	std::string::size().\\\\
 
 
 \begin{lstlisting}
-std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size                                                                              ▒
-     __gnu_cxx::__ops::_Iter_equals_val<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>::operator()<__gnu_cxx::__normal_iterator<▒
-     std::__find_if<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_strin▒
-     std::__find_if<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_strin▒
-     std::find<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<cha▒
-     HostCounter::isNewHost                                                                                                                                             ▒
-     HostCounter::notifyHost                                                                                                                                            ▒
-     ApacheAccessLogAnalyzer::processFile                                                                                                                               ▒
-     main                                                                                                                                                               ▒
-     __libc_start_main                                                                                                                                                  ▒
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size                                                                              
+     __gnu_cxx::__ops::_Iter_equals_val<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const>::operator()<__gnu_cxx::__normal_iterator<
+     std::__find_if<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_strin
+     std::__find_if<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_strin
+     std::find<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<cha
+     HostCounter::isNewHost                                                                                                                                             
+     HostCounter::notifyHost                                                                                                                                            
+     ApacheAccessLogAnalyzer::processFile                                                                                                                               
+     main                                                                                                                                                               
+     __libc_start_main                                                                                                                                                  
      0x128e258d4c544155 
 \end{lstlisting}
 Astuce : l'aide apparait avec la touche \textbf{?} et un filtrage peut être effectué grâce à \textbf{/}, ce qui fait apparaitre une petite case de dialogue où on peut entrer une recherche.
