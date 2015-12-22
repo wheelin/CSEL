@@ -16,25 +16,66 @@ typedef enum {AUTO, MAN} Mode_t;
 
 extern unsigned long exynos_thermal_get_value(void);
 
-static struct pwm_device pwm_struct;
+static struct pwm_device * pwm_dev;
 
 static Mode_t gMode;
 static int gDuty;
-static char * auto_str = "auto";
-static char * man_str = "manual";
+static char auto_str[] = "auto\n";
+static char man_str[] = "manual\n";
+static char cmd[CMD_MAX_LEN];
+struct task_struct *regulation_task;
 
+/******************************************************************************
+**
+******************************************************************************/
+static void pwm_init(void)
+{
+	pwm_dev = pwm_request(0, "myPWM");
+}
+
+static void pwm_en(void)
+{
+	pwm_enable(pwm_dev);
+}
+
+static void pwm_dis(void)
+{
+	pwm_disable(pwm_dev);
+}
+
+static void pwm_release(void)
+{
+	pwm_put(pwm_dev);
+}
+/******************************************************************************
+**
+******************************************************************************/
 static void set_pwm(unsigned int percent)
 {
 	unsigned long duty;
-	if(percent > 100) duty = PERIOD;
-	else if(percent < 0) duty = 0;
-	duty = PERIOD * (double)(percent/100);	
-	pwm_config(&pwm_struct, duty, PERIOD);
+	if(percent > 100) 
+	{
+		duty = PERIOD;
+	}
+	else if(percent < 0) 
+	{
+		duty = 0;
+	}
+	else
+	{
+		duty = (PERIOD * percent)/100;	
+	}
+	pr_info("Duty set to : %ld\n", duty);
+	if(duty != gDuty)
+	{
+		pwm_config(pwm_dev, duty, PERIOD);
+	}
 	gDuty = duty;
-	pr_info("Duty cycle changed\n");
 }
 
-struct task_struct *regulation_task;
+/******************************************************************************
+**
+******************************************************************************/
 int thread_regulate_fan(void *data)
 {
 	unsigned long temp;
@@ -45,81 +86,133 @@ int thread_regulate_fan(void *data)
 		{
 			temp = exynos_thermal_get_value();
 			if(temp < 57)
-				pwm_disable(&pwm_struct);
+			{
+				set_pwm(0);
+				pwm_dis();
+			}
 			else if(temp >= 57 && temp < 63)
 			{
-				pwm_enable(&pwm_struct);
 				set_pwm(20);
+				pwm_en();
 			}
 			else if(temp >= 63 && temp < 68)
 			{
-				pwm_enable(&pwm_struct);
 				set_pwm(50);
+				pwm_en();
 			}
 			else if(temp >= 68)
 			{
-				pwm_enable(&pwm_struct);
 				set_pwm(100);
+				pwm_en();
 			}
+			pr_info("Temperature of exynos is : %ld.\n", temp);
 		}
-		msleep(100);
+		msleep(2000);
 	}
-    	return 0;
+    return 0;
 }
 
-static ssize_t skeleton_show_mode(struct device_driver * dev, 
-	char * buf)
+/******************************************************************************
+**
+******************************************************************************/
+static ssize_t skeleton_show_mode(struct device *dev, 
+			struct device_attribute *attr,
+			char *buf)
 {
 	if(gMode == AUTO)
-		buf = auto_str;
+	{
+		memcpy(buf, auto_str, sizeof(auto_str));
+	}
 	else
-		buf = man_str;
+	{
+		memcpy(buf, man_str, sizeof(man_str));
+	}
 	return sizeof(buf);
 }
 
-static ssize_t skeleton_set_mode(struct device_driver * dev,
-	const char * buf, size_t count)
+/******************************************************************************
+**
+******************************************************************************/
+static ssize_t skeleton_set_mode(struct device *dev, 
+			struct device_attribute *attr,
+			const char *buf, size_t count)
 {
-	if(strncmp(buf, auto_str, 3) == 0)
+	if(count <= CMD_MAX_LEN)
+	{
+		memcpy(cmd, buf, count);
+	}
+	else
+	{
+		return 0;
+	}
+	if(strncmp(cmd, auto_str, count) == 0)
 	{
 		gMode = AUTO;
+		pr_info("Fan Control : chanded mode to automatic\n");
 		regulation_task = kthread_run(&thread_regulate_fan, 
 										NULL, "regulation_task");
 	}
-	else if(strncmp(buf, man_str, 3) == 0)
+	else if(strncmp(cmd, man_str, count) == 0)
 	{
 		gMode = MAN;
+		pr_info("Fan Control : changed mode to manual\n");
+		set_pwm(50);
+		pwm_en();
 		kthread_stop(regulation_task);
 	}
 	else gMode = AUTO;
-	return 0;
+	return count;
 }
 
-static ssize_t skeleton_show_duty(struct device_driver * dev, 
-	char * buf)
+/******************************************************************************
+**
+******************************************************************************/
+static ssize_t skeleton_show_duty(struct device *dev, 
+			struct device_attribute *attr,
+			char *buf)
 {
 	char duty_str[15];
 	sprintf(duty_str, "%d", gDuty);
-	buf = duty_str;
+	memcpy(buf, duty_str, sizeof(duty_str));
 	return sizeof(buf);
 }
 
-static ssize_t skeleton_set_duty(struct device_driver * dev,
-	const char * buf, size_t count)
+/******************************************************************************
+**
+******************************************************************************/
+static ssize_t skeleton_set_duty(struct device *dev, 
+			struct device_attribute *attr,
+			const char *buf, size_t count)
 {
 	char * ret;
+	int duty;
+	duty = simple_strtoul(buf, &ret, 10);
+	pr_info("Fan Control : duty of %d trying to be set\n", duty);	
 	if(gMode == MAN)
-		set_pwm((int)simple_strtoul(buf, &ret, 10));
+	{
+		pr_info("Fan Control : duty of %d was set\n", duty);
+		set_pwm(duty);
+		pwm_en();
+	}
 	return sizeof(buf);
 }
 
+/******************************************************************************
+**
+******************************************************************************/
+static void sysfs_dev_release(struct device *dev) 
+{ 
+	kthread_stop(regulation_task);
+	pwm_dis();
+	pwm_release();
+} 
+
+/******************************************************************************
+**
+******************************************************************************/
 DEVICE_ATTR(mode, 0666, skeleton_show_mode, skeleton_set_mode);
 DEVICE_ATTR(duty, 0666, skeleton_show_duty, skeleton_set_duty);
 
-static void sysfs_dev_release(struct device *dev) 
-{ 
-	pwm_put(&pwm_struct);
-} 
 
 static struct platform_driver sysfs_driver = {
 	.driver = {.name = "Fan_control_module"},
@@ -131,6 +224,9 @@ static struct platform_device sysfs_device = {
 	.dev.release = sysfs_dev_release,
 };
 
+/******************************************************************************
+**
+******************************************************************************/
 static int __init skeleton_init(void)
 {
 	
@@ -141,17 +237,33 @@ static int __init skeleton_init(void)
 		return status;
 	}
 	status = platform_device_register(&sysfs_device);
-	if(status != 0) return status;
-	device_create_file(&sysfs_device.dev, &dev_attr_mode);
-	device_create_file(&sysfs_device.dev, &dev_attr_duty);
-	//start of the fan control initialization section
-	pwm_struct = *pwm_request(0, "myPWM");
-	if(pwm_enable(&pwm_struct)) return -1;
-
+	if(status != 0) 
+	{
+		return status;
+	}
+	status = device_create_file(&sysfs_device.dev, &dev_attr_mode);
+	if(status != 0) 
+	{	
+		pr_info("Problem creating device attribute file");
+		return status;
+	}
+	status = device_create_file(&sysfs_device.dev, &dev_attr_duty);
+	if(status != 0) 
+	{
+		pr_info("Problem creating device attribute file");
+		return status;
+	}
+	regulation_task = kthread_run(&thread_regulate_fan, 
+										NULL, "regulation_task");
+	pwm_init();
+	gMode = AUTO;
 	pr_info("Linux module skeleton loaded\n");
 	return 0;
 }
 
+/******************************************************************************
+**
+******************************************************************************/
 static void __exit skeleton_exit(void)
 {
 	device_remove_file(&sysfs_device.dev, &dev_attr_mode);
@@ -165,5 +277,5 @@ module_init(skeleton_init);
 module_exit(skeleton_exit);
 
 MODULE_AUTHOR("Greg");
-MODULE_DESCRIPTION("Simple character oriented driver");
+MODULE_DESCRIPTION("Module to control the fan");
 MODULE_LICENSE("GPL");
