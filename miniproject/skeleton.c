@@ -56,21 +56,23 @@ static void set_pwm(unsigned int percent)
 	if(percent > 100) 
 	{
 		duty = PERIOD;
+		gDuty = 100;
 	}
 	else if(percent < 0) 
 	{
 		duty = 0;
+		gDuty = 0;
 	}
 	else
 	{
 		duty = (PERIOD * percent)/100;	
+		gDuty = percent;
 	}
 	pr_info("Duty set to : %ld\n", duty);
 	if(duty != gDuty)
 	{
 		pwm_config(pwm_dev, duty, PERIOD);
 	}
-	gDuty = duty;
 }
 
 /******************************************************************************
