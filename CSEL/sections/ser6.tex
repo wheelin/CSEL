@@ -1,2 +1,52 @@
 \section{Mini Projet - Programmation noyau et système}
 \subsection{Travail à réaliser}
+Concevez une application permettant de gérer automatiquement et manuellement la vitesse de rotation du ventilateur de l'Odroid-XU3 Lite.\\
+Cette application réalisera la fonctionnalité minimale suivante:
+\begin{enumerate}
+	\item La supervision de la température du microprocesseur et la gestion automatique de la vitesse du ventialteur devront être réalisées par un module noyau. Ce module devra offrir via le sysfs une interface permettant de choisir:
+	\begin{itemize}
+		\item le mode automatique ou manuel
+		\item le duty cycle à appliquer au PWM en mode manuel
+	\end{itemize}
+	\item La gestion du mode manuel devra être implémentée par un deamon en espace utilisateur. Ce deamon proposera deux interfaces distinctes:
+	\begin{enumerate}
+		\item Interface physique via les boutons poussoir et LEDs de la carte d'extension
+		\begin{itemize}
+			\item SW1 pour augmenter la vitesse de rotation du ventilateur, la pression du SW1 devra être signalisée sur la LED1
+			\item SW2 pour diminuer la vitesse de rotation du ventilateur, la pression du SW2 devra être signalisée sur la LED2
+			\item SW3 pour changer du mode automatique au mode manuel et vice versa. Le mode manuel sera signalé avec la LED3 allumée
+		\end{itemize}
+		\item Interface IPC au choix du développeur permettant de dialoguer avec une application pour choisir le mode de fonctionnement et spécifier la valeur du duty cycle
+	\end{enumerate}
+	\item Selon le choix de l'interface IPC, une petite application implémentant une interface utilisateur pour piloter le ventilateur via le deamon devra être réalisée.
+\end{enumerate}
+
+\subsection{Module de contrôle du ventilateur}
+Le code est disponible dans la section prévue à cet effet. Cependant, quelques informations peuvent être utiles. \\
+Comme le module doit proposer une interface dans le sysfs permettant de régler le mode de fonctionnement et la vitesse en cas de mode manuel, deux fichiers d'attributs ont été créés:
+\begin{itemize}
+	\item duty : permet, en mode manuel, de régler la vitesse de rotation du ventilateur. Un pourcentage doit lui être fourni.
+	\item mode : permet de définir le mode de fonctionnement, automatique ou manuel. 
+\end{itemize}
+Pour les utiliser, voici le type de commande qui peut être écrit:\\
+\begin{enumerate}
+	\item \textbf{Réglage du mode}\\
+	\begin{lstlisting}
+		echo manual > /sys/devices/platform/Fan_control_module/mode
+		echo auto > /sys/devices/platform/Fan_control_module/mode
+	\end{lstlisting}
+	\item \textbf{Réglage du duty cycle}
+	\begin{lstlisting}
+		echo 52 > /sys/devices/platform/Fan_control_module/duty
+	\end{lstlisting}
+	\item \textbf{Lecture du mode}
+	\begin{lstlisting}
+		cat  /sys/devices/platform/Fan_control_module/mode
+	\end{lstlisting}
+	Retourne une chaine de caractère ascii \textit{auto} ou \textit{manual}
+	\item \textbf{Lecture du duty cycle}
+	\begin{lstlisting}
+		cat /sys/devices/platform/Fan_control_module/duty 
+	\end{lstlisting}
+	Retourne un duty cycle en pourcents
+\end{enumerate}

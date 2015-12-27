@@ -90,3 +90,4 @@
 \contentsline {subsubsection}{\numberline {7.4.5}Exercice 5}{52}{subsubsection.7.4.5}
 \contentsline {section}{\numberline {8}Mini Projet - Programmation noyau et syst\IeC {\`e}me}{53}{section.8}
 \contentsline {subsection}{\numberline {8.1}Travail \IeC {\`a} r\IeC {\'e}aliser}{53}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Module de contr\IeC {\^o}le du ventilateur}{54}{subsection.8.2}
