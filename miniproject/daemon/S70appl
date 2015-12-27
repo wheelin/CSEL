@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Daemon application
+#
+case "$1" in
+  start)
+  	/usr/workspace/csel1/environment/miniProjet/daemon/app_a
+	;;
+  stop)
+  	killall app_a
+	;;
+  restart|reload)
+  	killall app_a
+	/usr/workspace/csel1/environment/miniProjet/daemon/app_a
+	;;
+  *)
+	echo $"Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+echo "Daemon application launched"
+
+exit $?
+

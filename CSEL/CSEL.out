@@ -89,4 +89,12 @@
 \BOOKMARK [3][-]{subsubsection.7.4.5}{Exercice 5}{subsection.7.4}% 89
 \BOOKMARK [1][-]{section.8}{Mini Projet - Programmation noyau et syst\350me}{}% 90
 \BOOKMARK [2][-]{subsection.8.1}{Travail \340 r\351aliser}{section.8}% 91
-\BOOKMARK [2][-]{subsection.8.2}{Module de contr\364le du ventilateur}{section.8}% 92
+\BOOKMARK [2][-]{subsection.8.2}{Installation des diff\351rentes parties}{section.8}% 92
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Daemon}{subsection.8.2}% 93
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Module noyau}{subsection.8.2}% 94
+\BOOKMARK [3][-]{subsubsection.8.2.3}{Application utilisateur}{subsection.8.2}% 95
+\BOOKMARK [2][-]{subsection.8.3}{Daemon en espace utilisateur}{section.8}% 96
+\BOOKMARK [2][-]{subsection.8.4}{Module de contr\364le du ventilateur}{section.8}% 97
+\BOOKMARK [2][-]{subsection.8.5}{Application utilisateur}{section.8}% 98
+\BOOKMARK [2][-]{subsection.8.6}{Mesure de performances}{section.8}% 99
+\BOOKMARK [2][-]{subsection.8.7}{Points \340 am\351liorer}{section.8}% 100
