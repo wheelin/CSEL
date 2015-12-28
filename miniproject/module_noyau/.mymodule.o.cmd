@@ -1,1 +1,0 @@
-cmd_/home/lmi/workspace/csel1/environment/miniProjet/noyau/mymodule.o := /home/lmi/workspace/xu3/buildroot/output/host/usr/bin/arm-linux-ld -EL    -r -o /home/lmi/workspace/csel1/environment/miniProjet/noyau/mymodule.o /home/lmi/workspace/csel1/environment/miniProjet/noyau/skeleton.o 

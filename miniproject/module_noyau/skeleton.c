@@ -24,7 +24,7 @@ static char auto_str[] = "auto\n";
 static char man_str[] = "manual\n";
 static char cmd[CMD_MAX_LEN];
 struct task_struct *regulation_task;
-
+static int thread_is_running;
 /******************************************************************************
 **
 ******************************************************************************/
@@ -151,8 +151,10 @@ static ssize_t skeleton_set_mode(struct device *dev,
 	{
 		gMode = AUTO;
 		pr_info("Fan Control : chanded mode to automatic\n");
-		regulation_task = kthread_run(&thread_regulate_fan, 
+		if(thread_is_running == 0)
+			regulation_task = kthread_run(&thread_regulate_fan, 
 										NULL, "regulation_task");
+		thread_is_running = 1;
 	}
 	else if(strncmp(cmd, man_str, count) == 0)
 	{
@@ -160,7 +162,9 @@ static ssize_t skeleton_set_mode(struct device *dev,
 		pr_info("Fan Control : changed mode to manual\n");
 		set_pwm(50);
 		pwm_en();
-		kthread_stop(regulation_task);
+		if(thread_is_running == 1)
+			kthread_stop(regulation_task);
+		thread_is_running = 0;
 	}
 	else gMode = AUTO;
 	return count;
@@ -257,6 +261,7 @@ static int __init skeleton_init(void)
 	}
 	regulation_task = kthread_run(&thread_regulate_fan, 
 										NULL, "regulation_task");
+	thread_is_running = 1;
 	pwm_init();
 	gMode = AUTO;
 	pr_info("Linux module skeleton loaded\n");
