@@ -117,6 +117,7 @@ L'application utilisateur permet de transmettre des commandes au daemon qui les 
  manual
  duty10
 \end{lstlisting}
+Le module noyau n'accepte pas de duty cycle de 0.\\
 Parfois la chaîne de caractère est mal transmise, le daemon reçoit par exemple "anual" au lieu de manual. Il suffit de retaper la commande. Il ne doit pas y avoir d'espace entre duty et le chiffre en pourcent désiré.
 \subsection{Mesure de performances}
 Les performances du miniprojet ont été mesurées avec la commande top:
@@ -131,5 +132,4 @@ On peut constater que nos différentes parties occupent peu de place au niveau d
 
 \subsection{Points à améliorer}
 Comme pour le projet sur le fan control, les boutons n'ont pas d'anti-rebond, ils restent parfois bloqués dans le mauvais état.\\
-Les valeurs de duty cycle et le mode entré géré par la carte d'extension et par l'application utilisateur ne sont pas synchronisés. Les deux tâches sont faites dans deux processus différents. Cela ne pose pas de problème particulier au niveau de l'utilisation, mais pourrait être faire en faisant par exemple un pipe entre les deux processus pour synchroniser les données.\\
-Un bug a été constaté. Si l'on écrit "manual" deux fois de suite dans le fichier du module noyau, le module plante pour une raison indéterminée.
+Les valeurs de duty cycle et le mode géré par la carte d'extension et par l'application utilisateur ne sont pas synchronisés. Les deux tâches sont faites dans deux processus différents. Le duty cylce incrémenté par les boutons n'est pas identique au duty entré dans l'application utilisateur. Cela ne pose pas de problème particulier au niveau de l'utilisation, mais pourrait être faire en faisant par exemple un pipe entre les deux processus pour synchroniser les données.\\
