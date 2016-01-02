@@ -1,3 +1,4 @@
+\newpage
 \section{Programmation noyau : Pilotes de périphériques}
 \subsection{Pilotes orientés mémoire}
 \subsubsection{Exercice 1}
@@ -16,8 +17,8 @@ uP register: Bit 7..4   : major revision=0x0
 uP register: Bit 3..0   : minor revision=0x1 
 \end{lstlisting}
 
-\textbf{Remarque : } On obtient bien le même id qu'avec le module noyau de l'exercie 6 de la série précédente.\\
-Pour utiliser correctement la commande mmap, il ne faut pas mettre l'offset à 0, mais à 0x1000000 (adresse du chipid de l'exercice6), sinon le code ne fonctionne pas, il essaie de lire une zone mémoire qu'il n'a pas le droit.
+\textbf{Remarques : } On obtient bien le même id qu'avec le module noyau de l'exercie 6 de la série précédente.\\
+Pour utiliser correctement la commande mmap, il ne faut pas mettre l'offset à 0, mais à 0x1000000 (adresse du chipid de l'exercice6), sinon le code ne fonctionne pas, il essaie de lire une zone mémoire interdite ou inexistante.
 
 \subsubsection{Exercice 2}
 \textbf{Donnée : } Sur	la	base	de	l’exercice	1,	développer	un	pilote	orienté	caractère	permettant	de	mapper	en	
@@ -88,13 +89,14 @@ $ sudo make install
 \textbf{Donnée : } Etendre	la	fonctionnalité	du	pilote	de	l’exercice	\#3 afin	que	l’on	puisse	à	l’aide	d’un	paramètre	
 module	spécifier	le	nombre	d’instance.	Pour	chaque	instance	on	créera	une	variable	unique	
 permettant	de	stocker	les	données	échangées	avec	l’application	en	espace	utilisateur.\\\\
+\color{red}
 \textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
+\color{black}
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
 # mknod /dev/mydev_0 c 248 0
 # mknod /dev/mydev_1 c 248 1
-# 
 # 
 # echo -n "bonjour, monsieur" > /dev/mydev_0
 [12232.424660] [c1] skeleton : open operation, major version : 248, minor version : 0
@@ -104,6 +106,7 @@ permettant	de	stocker	les	données	échangées	avec	l’application	en	espace	ut
 [12232.441568] [c1] skeleton : efault value=-14
 [12232.445802] [c1] skeleton : write operation... written=17
 [12232.451198] [c1] skeleton : release operation
+#
 # echo -n "bien le bonjour, mademoiselle" > /dev/mydev_1
 [12254.024382] [c1] skeleton : open operation, major version : 248, minor version : 1
 [12254.030622] [c1] skeleton : opened for reading and writing...
@@ -113,15 +116,13 @@ permettant	de	stocker	les	données	échangées	avec	l’application	en	espace	ut
 [12254.045522] [c1] skeleton : write operation... written=29
 [12254.050909] [c1] skeleton : release operation
 # 
-# 
 # cat /dev/mydev_0
 [12278.473668] [c0] skeleton : open operation, major version : 248, minor version : 0
 [12278.479815] [c0] skeleton : opened for reading and writing...
 [12278.485576] [c0] skeleton : read operation... read=17
 [12278.490663] [c6] skeleton : read operation... read=0
 [12278.495527] [c6] skeleton : release operation
-bonjour, monsieur# 
-# 
+bonjour, monsieur
 # 
 # cat /dev/mydev_1
 [12291.694063] [c0] skeleton : open operation, major version : 248, minor version : 1
@@ -129,8 +130,7 @@ bonjour, monsieur#
 [12291.706190] [c7] skeleton : read operation... read=29
 [12291.710985] [c7] skeleton : read operation... read=0
 [12291.715919] [c7] skeleton : release operation
-bien le bonjour, mademoiselle# 
-# 
+bien le bonjour, mademoiselle
 \end{lstlisting}
 
 \subsubsection{Exercice 5}
@@ -138,8 +138,7 @@ bien le bonjour, mademoiselle#
 orientés	caractère.	L’application	devra	écrire	un	texte	dans	le	pilote	et	le	relire.\\\\
 \textbf{Complément : } Le module noyau a été repris de l'exercice 3.\\\\
 \textbf{Emplacement du code : }\\ \textit{/PilotesPeripheriques/exercice5-UserAccess/user}\\
-\textit{/PilotesPeripheriques/exercice5-UserAccess/noyau}\\
-
+\textit{/PilotesPeripheriques/exercice5-UserAccess/noyau}\\\\
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
 lmi@csel1:~/workspace/csel1/environment/peripheral/exercice5/user$ make clean all
@@ -220,7 +219,9 @@ file /dev/mod close
 sysfs.	Le	pilote		offrira	des	attributs	de	périphérique	afin	pouvoir	lire	et	écrire	un	bloc	de	données	
 composé	de	quelques	membres	et	de	pouvoir	modifier	le	contenu	de	la	valeur	entière.	Seules	les	
 commandes	« echo » et	« cat » doivent	être	nécessaire	pour	manipuler	ces	attributs.\\\\
+\color{red}
 \textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
+\color{black}
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
@@ -239,6 +240,7 @@ Cet exercice n'a pas été réalisé.
 \subsubsection{Exercice 9}
 Cet exercice n'a pas été réalisé.
 
+\color{red}
 \subsection{Gestionnaires de périphériques}
 \subsubsection{Exercice 10}
 \textbf{Donnée : } Implémenter	à	l’intérieur	d’un	pilote	de	périphérique	orienté	caractère,	les	mécanismes	
@@ -250,6 +252,7 @@ par	l’utilitaire	« mdev »	de	la	BusyBox.\\\\
 \begin{lstlisting}
 
 \end{lstlisting}
+\color{black}
 
 
 

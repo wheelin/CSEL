@@ -30,7 +30,7 @@ MODULE_DESCRIPTION("Module Skeleton");
 MODULE_LICENSE("GPL");
 \end{lstlisting}
 \textbf{Point c :} Installer	le	module (insmod),	contrôler	le	log	du	noyau	(dmesg).\\\\
-\textbf{Exécution du code : }Le module doit installé sur la cible à l'aide la commande \textit{insmod}. On peut observer que le module a bien été installé à l'aide de la commande \textit{dmesg}.
+\textbf{Exécution du code : }Le module doit être installé sur la cible à l'aide la commande \textit{insmod}. On peut observer que le module a bien été installé à l'aide de la commande \textit{dmesg}.
 \begin{lstlisting}
 # insmod mymodule.ko
 # dmesg | tail -n 4
@@ -65,15 +65,15 @@ Module                  Size  Used by    Tainted: G
 \end{lstlisting}
 
 \textbf{Point f :} Adapter	le	Makefile	du	module	pour	autoriser	l’installation	du	module	avec	les	autres	modules	du	noyau	permettant	l’utilisation	de	la	commande	"modprobe".	Le	module	devra	être	installé	dans	le	root	filesystem	utilisé	en	nfs	par	la	cible.\\\\
-\textbf{Emplacement du code : } \textit{/ModulesNoyau/exercice1-Module/pointF}\\
-Pour que le module puisse être ajouté dans le noyau, il suffit d'ajouter les lignes suivantes au Makefile précédent:
+\textbf{Emplacement du code : } \textit{/ModulesNoyau/exercice1-Module/pointF}\\\\
+Pour que le module puisse être ajouté dans le noyau, il suffit d'ajouter les lignes suivantes au Makefile:
 \begin{lstlisting}
 MODPATH := /tftpboot/odroidxu3
 
 install:
 $(MAKE) -C $(KDIR) M=$(PWD) INSTALL_MOD_PATH=$(MODPATH) modules_install
 \end{lstlisting}
-\textbf{Exécution du code : }Le code doit être compilé et installé sur la machine hôte à l'aide des commandes suivantes:
+\textbf{Exécution du code : }Le code doit être compilé et installé depuis la machine hôte à l'aide des commandes suivantes:
 \begin{lstlisting}
 $ make clean all
 $ sudo make install
@@ -94,7 +94,7 @@ odroidxu3 login: root
 \end{lstlisting}
 \subsubsection{Exercice 2}
 \textbf{Donnée : } Adapter	le	module	de	l’exercice	précédent	afin	qu’il	puisse	recevoir	deux	ou	trois paramètres de	votre	choix.	Ces	paramètres	seront	affichés dans	la	console.	Adapter	également	le rootfs	afin	de	pouvoir	utiliser	la	commande	"modprobe".\\\\
-\textbf{Emplacement du code : } \textit{/ModulesNoyau/exercice1-Module/exercice2-Parameter}\\\\
+\textbf{Emplacement du code : } \textit{/ModulesNoyau/exercice2-Parameter}\\\\
 \textbf{Exécution du code : }Ce module prend deux paramètres d'entrée par défaut, text = "hello" et elements = 2. La valeur de ces éléments peut être modifiée lors de l'installation du module dans le noyau, comme le montre la démonstration suivante.
 \begin{lstlisting}
 # modprobe mymodule                                                             
@@ -188,7 +188,8 @@ Source : \url{http://elinux.org/Debugging_by_printing}
 \end{lstlisting}
 \subsubsection{Exercice 5}
 \noindent
-\textbf{Donnée : }Indiquer les différents alocateurs SLAB disponibles dans le noyau Linux pour la cible ORDOID-XU3
+\textbf{Donnée : }Indiquer les différents alocateurs SLAB disponibles dans le noyau Linux pour la cible ORDOID-XU3.\\\\
+\textbf{Réponse:}
 \begin{enumerate}
 	\item SLAB : "as cache frendly as possible, benchmark frendly"
 	\item SLOB : "as compact as possible"
@@ -282,8 +283,8 @@ La zone mémoire réservée par le code a été nommée "uP register".\\\\
 \end{lstlisting}
 \subsection{Gestion des interruptions}
 \subsubsection{Exercice 9}
-\textbf{Donnée : }Développement d'un petit module permettant de capturer les pressions exercées sur les swtiches de la carte d'extension par interruption. Afin de permettre le debugging du module, chaque capture affichera un petit message.\\
-Informations fournies:
+\textbf{Donnée : }Développement d'un petit module permettant de capturer les pressions exercées sur les swtiches de la carte d'extension par interruption. Afin de permettre le debugging du module, chaque capture affichera un petit message.\\\\
+\textbf{Informations fournies:}
 \begin{itemize}
 	\item Configurer la direction des GPIO en entrée : 
 	\begin{lstlisting}
@@ -307,10 +308,10 @@ Informations fournies:
 \textbf{Complément : } Les switches de 1 à 4 sont interceptés. \\\\
 \textbf{Emplacement du code : } \textit{/ModulesNoyau/exercice9-Interrupt}\\\\
 \textbf{Exécution du code : }
-Et voici la preuve que tout fonctionne conformément, avec un message s'affichant pour chaque bouton pressé:
+Et voici la preuve que tout fonctionne correctement, avec un message s'affichant pour chaque bouton pressé:
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{img/interrupt_success.png}
+		\includegraphics[width=16.5cm]{img/interrupt_success.png}
 		\caption{Affichage du chargement du module, des pressions sur les boutons et de la suppression du module}
 		\label{ser1ex9}
 	\end{center}

@@ -1,1 +1,5 @@
 sections/envLinuxEmbarque : Réponse aux questions
+sections/ser2 : Exercice4: Manque le code (dans rapport et dans répertoire projet)
+sections/ser2 : Exercice7: idem
+sections/ser2 : Exercice10 : Pas fait du tout (ou pas mis dans le rapport ni répertoire de projet)
+sections/ser5 : Exercice4 : Pas fait

@@ -1,3 +1,4 @@
+\newpage
 \section{Optimisation : Performances}
 \subsection{Installation de perf}
 En suivant pas à pas les instructions de la donnée, perf a pu être installé sans aucun problème sur la machine virtuelle. 
@@ -160,7 +161,7 @@ Le programme est décomposé en deux parties:
 \end{itemize}
 \subsubsection{Exercice 2}
 \textbf{Donnée : } Compilez	le	programme	à	l'aide	du	Makefile	joint.
-Mesurez	le	temps	d'exécution\\\\
+Mesurez	le	temps	d'exécution\\
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
@@ -177,7 +178,6 @@ static int compare (const void* a, const void* b)
 Avant	« long	long	sum	=	0; »,	ajoutez	le	code	suivant :
 qsort(data, SIZE, sizeof(data[0]), compare);
 Compilez	et	mesurez	le	temps	d'exécution	de	la	version	modifiée\\\\
-\textbf{Emplacement du code : } \textit{}\\
 Avant que la somme soit calculée, un tri est effectué sur le tableau contenant les nombres aléatoires.\\
 Voici la fonction de tri:
 \begin{lstlisting}
@@ -187,7 +187,6 @@ static int compare (const void * a, const void * b)
 }
 \end{lstlisting}
 On obtient alors avec la commande suivante:
-\textbf{Exécution du code : } \\
 \begin{lstlisting}
 # time ./ex2 > /dev/null 
 real    0m 6.95s
@@ -196,6 +195,7 @@ sys 0m 0.00s
 \end{lstlisting}
 un temps environ 4 fois moindre de 6.94s.
 
+\color{red}
 \subsubsection{Exercice 4}
 \textbf{Donnée : } Vous	observez	sans	doute	une	nette	amélioration	sur	le	temps	d'exécution.
 A	l'aide	de	l'outil	perf	et	de	sa	sous-commande	'stat',	en	utilisant	différents	compteurs	déterminez	
@@ -206,11 +206,12 @@ pourquoi	le	programme	modifié	s'exécute	plus	rapidement.\\\\
 \begin{lstlisting}
 
 \end{lstlisting}
+\color{black}
 
 \subsection{Parsing de logs apache}
 \subsubsection{Exercice 1}
 \textbf{Donnée : } Compilez	l'application	en	utilisant	le	Makefile	fourni	et	mesurez sur	la	machine	virtuelle son	temps	
-d'exécution	avec	la	commande	“time”.\\\\
+d'exécution	avec	la	commande	“time”.\\
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
@@ -232,7 +233,7 @@ $ perf record -g ./read-apache-logs access_log_NASA_Jul95_samples
 L'exécution	de	cette	commande	doit	produire	un	fichier	de	résultat	perf,	nommé	perf.data.	Si	l'on	
 exécute	une	nouvelle	fois	la	commande,	ce	fichier	sera	copié	vers	perf.data.old et	un	nouveau	
 perf.data	correspondant	à	la	dernière	exécution	sera	créé.
-A	quoi	sert	l'option	-g	?	En	quoi	son	résultat	être	utile	?\\\\
+A	quoi	sert	l'option	-g	?	En	quoi	son	résultat	être	utile	?\\
 
 L'option \textbf{-g} active l'enregistrement du call graph du programme. Ceci permet de voir les appels de fonctions, 
 
@@ -241,7 +242,7 @@ L'option \textbf{-g} active l'enregistrement du call graph du programme. Ceci pe
 Cette	commande	lance	un	outil	interactif	(interface	console de	type	“ncurses”):	il	est	donc	possible	
 d'interagir avec	les	touches	du	clavier.Chaque	ligne	représente	une	fonction,	celles	récoltant	le	plus	d'évènements	sont	montrées	en	haut.	
 En	vous	basant sur	les	informations	disponibles	dans	le	wiki	de	perf	
-(\url{https://perf.wiki.kernel.org/index.php/Tutorial}),	décrivez	ce	que	représente	chaque	colonne.\\\\
+(\url{https://perf.wiki.kernel.org/index.php/Tutorial}),	décrivez	ce	que	représente	chaque	colonne.\\
 
 \begin{enumerate}
 \item Cette colomne décrit le poucentage de temps par rapport au programme qui est passé dans cette fonction.
@@ -258,7 +259,7 @@ cependant	une	information	capitale :	quelle	fonction	de	notre	application	fait	a
 Grâce	à	l'option	-g passée	à	perf	record,	nous	pouvons	afficher	le	call-graph	complet.	Il	suffit	de	
 naviguer	dans	l'interface	et	développer	la	ligne	std::string::size() avec	la	touche	“Enter”.	
 Avec	les	instructions	précédentes,	déterminez quelle	fonction	de	notre	application	fait	(indirectement)	
-appel	à	std::string::size().\\\\
+appel	à	std::string::size().\\
 
 
 \begin{lstlisting}
@@ -280,7 +281,7 @@ Astuce : l'aide apparait avec la touche \textbf{?} et un filtrage peut être eff
 \textbf{Donnée : } Maintenant	que	vous	savez	quelle	fonction	utilise	le	plus	de	ressources	CPU,	trouvez	une	optimisation	
 du	code	permettant	de	réduire	drastiquement	le	temps	d'exécution	(vous	devriez	arriver	à	quelques	
 dixièmes	de	secondes	pour	le	fichier	sample).\\\\
-\textbf{Emplacement du code : } \textit{HostCounter.h}
+\textbf{Emplacement du code : } \textit{/performances/03/HostCounter.h}
 \begin{lstlisting}
 #include <string>
 #include <set>
@@ -296,8 +297,7 @@ class HostCounter
         std::set< std::string > mySetOfHots;
 };
 \end{lstlisting}
-
-\textbf{Emplacement du code : } \textit{HostCounter.cpp}
+\textbf{Emplacement du code : } \textit{/performances/03/HostCounter.cpp}
 \begin{lstlisting}
 #include "HostCounter.h"
 #include <set>
@@ -319,7 +319,7 @@ int HostCounter::getNbOfHosts(){
 }
 \end{lstlisting}
 
-\textbf{Exécution du code : } \\
+\textbf{Exécution du code : } 
 \begin{lstlisting}
 time ./read-apache-logs access_log_NASA_Jul95_samples 
 Processing log file access_log_NASA_Jul95_samples

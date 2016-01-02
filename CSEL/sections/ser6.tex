@@ -21,7 +21,7 @@ Cette application réalisera la fonctionnalité minimale suivante:
 	\item Selon le choix de l'interface IPC, une petite application implémentant une interface utilisateur pour piloter le ventilateur via le deamon devra être réalisée.
 \end{enumerate}
 \subsection{Installation des différentes parties}
-Le miniprojet est constituer d'un module noyau, d'un daemon et d'une application utilisateur, voici les différentes étapes pour les installer. Il faut bien évidement que chaque partie aie été préalablement compilée.
+Le miniprojet est constitué d'un module noyau, d'un daemon et d'une application utilisateur. Voici les différentes étapes pour les installer. Il faut bien évidement que chaque partie aie été préalablement compilée.
 \subsubsection{Daemon}
 \textbf{Emplacement du code: }\textit{/miniprojet/daemon/}\\
 \begin{lstlisting}
@@ -73,8 +73,8 @@ Jan  1 04:54:27 odroidxu3 daemon.info app_a[1620]: daemon Duty 48
 
 À l'aide des boutons de la carte d'extension, on peut gérer le duty cycle du ventilateur et le mode manual/auto. Le duty cycle du ventilateur n'est modifié que lorsque l'on est en mode manuel (option du module noyau). Les LEDs s'allument en fonction de la pression sur les boutons.\\
 Une option a été ajoutée au cahier des charges. Quand on tient longtemps un bouton appuyé, le duty cycle s'auto incrémente.\\
-L'IPC choisi est un fifo entre l'application utilisateur et le daemon.\\
-Le daemon contient deux processus, un pour les boutons, l'autre pour l'IPC.\\
+L'IPC choisi est une fifo entre l'application utilisateur et le daemon.\\
+Le daemon contient deux processus, un pour les boutons, l'autre pour l'IPC.\\\\
 \textbf{Warning: } Contrairement à l'exemple des slides, le "passwd" pour donner les droits a du être changé à "root" au lieu de "daemon", car les gpio sont importées/exportées après l'initialisation dans le daemon body. Normalement, cette action devrait être faite avant.
 
 \subsection{Module de contrôle du ventilateur}
@@ -107,7 +107,7 @@ Pour les utiliser, voici le type de commande qui peut être écrit:\\
 \end{enumerate}
 
 \subsection{Application utilisateur}
-L'application utilisateur permet de transmettre des commandes au daemon qui les retransmet au noyau. Voici les trois commandes reconnues:
+L'application utilisateur permet de transmettre des commandes au daemon qui les retransmet au module noyau. Voici les trois commandes reconnues:
 \begin{lstlisting}
  cd /usr/workspace/csel1/environment/miniProjet/user/
  # ./app_h 
