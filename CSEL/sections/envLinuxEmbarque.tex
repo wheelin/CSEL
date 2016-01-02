@@ -28,14 +28,14 @@ Le plus simple est de placer le script directement dans le workspace CSEL. Il s'
 \end{lstlisting}
 Il va aller détacher les volumes attachés à la carte SD, créer la table de partition et graver les différents firmwares et images.\\
 \\
-Une fois la carte gravée et insérée dans la cible, le ventilateur se met à tourner si tout s’est bien passé. Si rien ne se passe, il faut également contrôler que le switch de l’Odroid est en position pour booter sur la carte SD.
+Une fois la carte gravée et insérée dans la cible, le ventilateur se met à tourner si tout s’est bien passé. Si rien ne se passe, il faut également contrôler que le switch de l’Odroid est dans la position pour booter sur la carte SD.
 \subsection{Mise en place de l'infrastructure}
 La cible ODROID-XU3 doit avoir l’adresse IP 192.168.0.11 et la machine hôte l’IP 192.168.0.4.
 \subsubsection{Configuration de la machine virtuelle}
 Pour associer la carte réseau de l’ordinateur à la machine virtuelle, il faut suivre les étapes ci-dessous :
 \begin{enumerate}
 	\item Éteindre la vm, aller dans\textit{ edit->Virtual Network Editor…->change settings}
-	\item Dans la fenêtre des réseaux, changer la configuration en bridged to : Contrôleur PCIe (propre à l’ordinateur), carte réseau de l’ordinateur
+	\item Dans la fenêtre des réseaux, changer la configuration en bridged to : Il faut choisir la carte réseau de l'ordinateur. Ici, Contrôleur PCIe (propre à l’ordinateur).
 \end{enumerate}
 \begin{figure}[H]
 	\begin{center}
@@ -62,7 +62,7 @@ La dernière étape est d’activer le réseau dans la machine virtuelle (icône
 \end{figure}
 
 \subsubsection{Accès ssh sans mot de passe}
-Il faut aller modifier le fichier \textit{/etc/ssh/sshd\_config} sur la cible pour autoriser l’accès sans mot de passe. Pour accéder au fichier, il faut entrer sur la cible par la connexion série :
+Il faut aller modifier le fichier \textit{/etc/ssh/sshd\_config} sur la cible pour autoriser l’accès sans mot de passe.\\ Pour accéder au fichier, il faut entrer sur la cible par la connexion série :
 \begin{lstlisting}
 $ sudo minicom
 
@@ -80,7 +80,7 @@ odroidxu3 login: root
 # 
 
 \end{lstlisting}
-On peut ensuite rechercher le fichier et l’éditer avec vi ou vim pour modifier "PermitEmptyPassword yes". Une fois la configuration faite, il faut redémarrer la cible :
+On peut ensuite rechercher le fichier et l’éditer avec vi ou vim pour changer l'attribut suivant à "yes": "PermitEmptyPassword yes". Il faut ensuite redémarrer la cible :
 \begin{lstlisting}
 # reboot
 \end{lstlisting}
@@ -97,15 +97,9 @@ lmi@csel1:~$ sudo minicom
 ...                                                      
 Press 'Enter' or 'Space' to stop autoboot:  0       
                             
-ODROIDXU3> usb start                                                            
+ODROIDXU3> usb start                                                          
 (Re)start USB...                                                                
-USB:   Register 1313 NbrPorts 3                                                 
-USB EHCI 1.00                                                                   
-scanning bus for devices... The request port(2) is not configured               
-The request port(2) is not configured                                           
-4 USB Device(s) found                                                           
-scanning bus for storage devices... 0 Storage Device(s) found            
-scanning bus for ethernet devices... 1 Ethernet Device(s) found          
+...    
 
 ODROIDXU3> ping 192.168.0.4                                                     
 Waiting for Ethernet connection... done.                                        
@@ -114,10 +108,10 @@ host 192.168.0.4 is alive
 
 ODROIDXU3> run nfsboot
 \end{lstlisting}
-Si la machine hôte répond au ping, tout a bien été configuré.
+Si la machine hôte répond au ping, tout a bien été configuré. La dernière commande "run nfsboot" permet de démarrer la cible en mode développement.
 
 \subsubsection{Création de l'espace de travail}
-Le but est de configurer le noyau Linux afin d’attacher un usrfs sous ext4 depuis la carte SD. En d’autres termes, partager un espace de travail entre la cible et l’hôte. Pour cela, il faut accéder à la cible via le port série ou par ssh et de taper les commandes indiquées dans la donnée.
+Le but est de partager le répertoire de projet de la machine hôte avec la cible. Pour cela, il faut accéder à la cible via le port série ou par ssh et taper les commandes indiquées dans la donnée. Celles ci-dessous montrent comment attacher automatiquement l'espace de travail.
 \begin{lstlisting}
 # mkdir /usr/workspace
 # vi /etc/fstab
@@ -134,24 +128,23 @@ Le but est de configurer le noyau Linux afin d’attacher un usrfs sous ext4 dep
 # mount -a
 # reboot
 \end{lstlisting}
-Pour contrôler que le répertoire est bien partagé avec la cible, on peut y entrer la commande mount et normalement on voit le répertoire partagé.
+Pour contrôler que le répertoire est bien partagé avec la cible, on peut y entrer la commande mount et normalement on voit le répertoire partagé. Il sera maintenant attaché automatiquement à chaque démarrage de la cible en mode de développement.
 \begin{lstlisting}
 # mount
 ...
 192.168.0.4:/home/lmi/workspace on /usr/workspace type nfs (rw,relatime,vers=3,rsize=131072,wsize=131072,namlen=255,hard,nolock,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=192.168.0.4,mountvers=3,mountproto=tcp,local_lock=all,addr=192.168.0.4)
 \end{lstlisting}
 \subsection{Debugging de l'application}
-Cette section présente les différentes étapes à réaliser pour configurer Eclipse pour qu’il utilise une connexion ssh entre l’hôte et la cible.
+Cette section présente les différentes étapes à réaliser pour configurer l'environnement Eclipse pour qu’il utilise une connexion ssh entre l’hôte et la cible et pouvoir debugger à distance une application.
 Pour cela, il faut commencer par charger un projet dans Eclipse :
 \begin{enumerate}
 	\item File -> Import… (si le projet existe déjà)
-	\item C/C++ ->Existing Code as Makefile Project (configure pour utiliser le Makefile du projet et non un de Eclipse)
-	\item Il suffit ensuite de définir le nom du projet et le path jusqu’au code source
+	\item C/C++ ->Existing Code as Makefile Project (configure pour utiliser le Makefile du projet et non celui généré par Eclipse)
 \end{enumerate}
 Une fois le projet importé dans l’espace de travail, il faut configurer le debugger:
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{img/eclipseConfig1.png}
+		\includegraphics[width=16cm]{img/eclipseConfig1.png}
 		\caption{Configuration du debugger}
 		\label{eclipseConfig1}
 	\end{center}
@@ -159,7 +152,7 @@ Une fois le projet importé dans l’espace de travail, il faut configurer le de
 Pour pouvoir entrer le path de la cible, il faut impérativement que la connexion ssh soit configurée comme ci-dessous :
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{img/eclipseConfig2.png}
+		\includegraphics[width=15cm]{img/eclipseConfig2.png}
 		\caption{Configuration de l'accès ssh}
 		\label{eclipseConfig2}
 	\end{center}
@@ -167,14 +160,14 @@ Pour pouvoir entrer le path de la cible, il faut impérativement que la connexio
 Il faut encore aller configurer le debugger gdb :
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{img/eclipseConfig3.png}
+		\includegraphics[width=15cm]{img/eclipseConfig3.png}
 		\caption{Configuration du server gdb}
 		\label{eclipseConfig3}
 	\end{center}
 \end{figure}
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=14cm]{img/eclipseConfig4.png}
+		\includegraphics[width=16cm]{img/eclipseConfig4.png}
 		\caption{Configuration des shared library}
 		\label{eclipseConfig4}
 	\end{center}
@@ -187,6 +180,36 @@ Avec cette configuration, on peut ensuite debugger pas à pas les exercices d’
 		\label{eclipseConfig5}
 	\end{center}
 \end{figure}
+\subsection{Travail à réaliser}
+\begin{enumerate}
+	\item Installer l'environnement de développement sur la machine hôte, selon les instructions ci-dessus, et configurer la cible en mode de développement avec NFS sous Eclipse.\\Installer/configurer SSH pour accès à distance.
+	\item Créer un script permettant de générer la carte SD.
+	\item Configurer le noyau Linux afin de mounter un usrfs sous ext4 depuis la carte SD. Ce dernier sera monté dans le répertoire "/usr/local/".
+	\item Tester les différentes méthodes et techniques de débogage proposées par l'environnement Linux. Pour cela générer les exemples fournis dans le répertoire "~/workspace/csel1/environement/" en suivant les indications des slides.
+	\item Sur la base de l'exercice 4, mettre l'ODROID-XU3 en mode production. Un petit programme situé dans le "usrfs" sera démarré au lancement de la cible.
+\end{enumerate}
+À ce point du rapport, les points 1 et 2 ont déjà été réalisés.
+\subsection{Configuration du noyau pour monter un usrfs}
+Le usrfs ou user file system est une des partitions que nous avons créée sur la carte SD. Le usrfs peut contenir des programmes spécifiques à une application de la plateform. Il est possible de monter cette partition dans un répertoire de notre choix, ici "/usr/local". Pour monter le usrfs, il suffit de taper les commandes suivantes sur la cible:
+\begin{lstlisting}
+# mkdir /usr/local
+# mount -t ext4 /dev/mmcblk0p2 /usr/local
+\end{lstlisting}
+"mmcblk0p2" indique le bloc mémoire 0 partition 2. Si l'on regarder la configuration de la carte SD faite plus haut, c'est à cette endroit que l'on a placé le usrfs.\\
+Si l'on veut que ce montage se fasse automatiquement au démarrage de la cible, il faut d'ajouter au fichier \textit{/etc/fstab} la ligne suivante:
+\begin{lstlisting}
+/dev/mmcblk0p2 /usr/local ext4 defaults 0 0
+\end{lstlisting}
+Il faut ensuite activer la configuration, redémarrer et vérifier que le montage s'est fait correctement:
+\begin{lstlisting}
+# mount -a
+# reboot
+...
+# mount                                                                         
+...
+/dev/mmcblk0p2 on /usr/local type ext4 (rw,relatime,data=ordered)      
+\end{lstlisting}
+
 \subsection{Test des différents exemples proposés}
 Pour la suite du rapport, les symboles suivant sont définis:
 \begin{enumerate}
@@ -383,6 +406,8 @@ Starting sshd: OK
 Daemon application launched                                                     
 [    9.933833] [c4] pwm-samsung: tin parent at 66600000  
 \end{lstlisting}
+\newpage
+\color{red}
 \subsection{Réponse aux questions}
 1. Comment faut-il procéder pour générer l'U-Boot?
 \begin{lstlisting}
@@ -404,5 +429,5 @@ Daemon application launched
 \begin{lstlisting}
 
 \end{lstlisting}
-
+\color{black}
 
