@@ -229,7 +229,7 @@ Pour les derniers outputs, la limite d'allocation mémoire a été élevée à 1
 
 \textbf{Emplacement du code : } \textit{/Multiprocessing/Exercice3-CPU}\\
 
-\textbf{Monter les cgroup : } \\
+\textbf{Monter les cgroup : } 
 \begin{lstlisting}
 # mount -t tmpfs none /sys/fs/cgroup                                            
 # mkdir /sys/fs/cgroup/memory                                                   
@@ -258,7 +258,7 @@ sh: write error: No space left on device
 	Lancez	ensuite	votre	application	dans	chacune	des	shells.\\
 	Quel	devrait	être	le	bon	comportement ?	Pouvez-vous	le	vérifier ?}\\\\
 Installation de l'application avec la connexion sérielle: \\
-Oui, on peut le vérifier, les commandes sont visibles un peu plus loin. Le comportement attendu est une utilisation à 100\% des cœurs 3 et 4 (attribués lors de la création du CGroup) du processeur avec 50\% pour le parent et 50\% pour le parent. Pour l'instant, on n'a pas assigné de limitation dans l'utilisation du temps CPU.\\
+Oui, on peut le vérifier, les commandes sont visibles un peu plus loin. Le comportement attendu est une utilisation à 100\% des cœurs 3 et 4 (attribués lors de la création du CGroup) du processeur avec 50\% pour le parent et 50\% pour le parent. Pour l'instant, on n'a pas assigné de limitation dans l'utilisation du temps CPU.
 \begin{lstlisting}
 lmi@csel1:~$ sudo minicom
 ...
@@ -270,7 +270,7 @@ In the parent process
 
 In the children process.  
 \end{lstlisting}
-Installation de l'application avec la connexion ssh: \\
+Installation de l'application avec la connexion ssh: 
 \begin{lstlisting}
 lmi@csel1:~$ ssh root@192.168.0.11
 # echo $$ > /sys/fs/cgroup/cpuset/low/tasks
@@ -285,7 +285,7 @@ In the children process.
 
 \end{lstlisting}
 
-L'utilisation du CPU peut être affichée avec la commande top en lançant l'application en arrière plan:\\
+L'utilisation du CPU peut être affichée avec la commande top en lançant l'application en arrière plan:
 \begin{lstlisting}
 # ./app_a &                                                                     
 # In the main process.                                                          
@@ -299,7 +299,7 @@ In the children process.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=16cm]{img/multiprocessCGroup.png}
+		\includegraphics[width=13cm]{img/multiprocessCGroup.png}
 		\caption{Utilisation du processeur}
 		\label{multiprocess1}
 	\end{center}
@@ -308,11 +308,11 @@ In the children process.
 	cgroups,	comment devrait-on	procéder	pour	lancer deux	tâches	distinctes	sur	le	cœur	6	de	
 	notre	processeur	et	attribuer	75\%	du	temps	CPU	à	la	première	tâche	et	25\%	à	la	deuxième ?}\\\\
 Voici les commandes utilisées pour la configuration demandée. Par défaut, l'attribut cpu.shares contient 1024, qui représente 50\% du temps CPU. Pour plus de lisibilité, l'application a été compilée une fois sous le nom app\_a et une fois sous le nom app\_b.\\\\
-Dans la connection ssh:
+Dans la connection ssh:\\
 \begin{lstlisting}
 # top
 \end{lstlisting}
-Dans la connection série:
+Dans la connection série:\\
 \begin{lstlisting}
 # echo 512 > /sys/fs/cgroup/cpuset/low/cpu.shares 
 # echo 1536 > /sys/fs/cgroup/cpuset/high/cpu.shares  
