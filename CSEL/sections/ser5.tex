@@ -195,18 +195,55 @@ sys 0m 0.00s
 \end{lstlisting}
 un temps environ 4 fois moindre de 6.94s.
 
-\color{red}
 \subsubsection{Exercice 4}
 \textbf{Donnée : } Vous	observez	sans	doute	une	nette	amélioration	sur	le	temps	d'exécution.
 A	l'aide	de	l'outil	perf	et	de	sa	sous-commande	'stat',	en	utilisant	différents	compteurs	déterminez	
 pourquoi	le	programme	modifié	s'exécute	plus	rapidement.\\\\
-\textbf{Emplacement du code : } \textit{}\\
+\textbf{Emplacement du code : } \textit{performances/02}\\
 
+Les statistiques suivantes s'appliquent à l'application sans tri préalable.
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
+Performance counter stats for './test_not_sorted':
 
+19545.395156      task-clock (msec)         #    1.000 CPUs utilized          
+11      context-switches          			#    0.001 K/sec                  
+1      cpu-migrations            			#    0.000 K/sec                  
+62      page-faults               			#    0.003 K/sec                  
+65'152'879'397      cycles                  #    3.333 GHz                    
+32'321'278'233      stalled-cycles-frontend #   49.61% frontend cycles idle   
+13'650'524'294      stalled-cycles-backend  #   20.95% backend  cycles idle   
+34'472'023'415      instructions            #    0.53  insns per cycle        
+											#    0.94  stalled cycles per insn
+6'558'873'421      branches                 #  335.571 M/sec                  
+1'551'353'982      branch-misses            #   23.65% of all branches        
+
+19.550181930 seconds time elapsed
 \end{lstlisting}
-\color{black}
+\textbf{Emplacement du code : } \textit{performances/02/sorted}\\
+
+Les statistiques suivantes s'appliquent à l'application avec tri préalable.\\
+\textbf{Exécution du code : } \\
+\begin{lstlisting}
+Performance counter stats for './test_sorted':
+
+7422.583465      task-clock (msec)         #    1.000 CPUs utilized          
+6      context-switches          			#    0.001 K/sec                  
+0      cpu-migrations            			#    0.000 K/sec                  
+83      page-faults               			#    0.011 K/sec                  
+24'730'131'217      cycles                    #    3.332 GHz                    
+14'861'808'053      stalled-cycles-frontend   #   60.10% frontend cycles idle   
+555'105'484      stalled-cycles-backend    #    2.24% backend  cycles idle   
+34'482'583'827      instructions              #    1.39  insns per cycle        
+										#    0.43  stalled cycles per insn
+6'563'029'266      branches                  #  884.197 M/sec                  
+403'556      branch-misses             		#    0.01% of all branches        
+
+7.424632902 seconds time elapsed
+\end{lstlisting}
+Le nombre qui ressort le plus en comparant les deux résultats est le pourcentage de branch-misses. Dans les processeurs modernes, un mécanisme de prédiction de branchements basé sur une étude statistique des derniers branchements effectués calcule la probabilité que le branchement suivant soit juste ou faux. Ainsi, si le mécanisme prédit correctement, on ne troue pas le \textit{pipe}, ce qui nous fait gagner de la vitesse.\\
+Dans notre cas, les nombres sont triés dans l'ordre croissant, faisant que le mécanisme doive se \textit{stabiliser} deux fois, une fois au début du parcourt du tableau, où les nombres inférieurs à 128 sont rassemblés et une seconde fois quand la condition devient vraie tout le temps et que le mécanisme doive intégrer ça dans ses probabilités de branchement.\\
+Quand le tableau n'est pas trié, il est impossible pour le mécanisme de calculer des probabilités qui soient solides. Aussi, il est plus facile de se tromper alors et de casser le \textit{pipe} car on doit aller chercher une autre instruction que celle déjà \textit{fetchée}.
 
 \subsection{Parsing de logs apache}
 \subsubsection{Exercice 1}

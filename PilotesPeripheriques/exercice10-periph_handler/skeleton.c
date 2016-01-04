@@ -4,7 +4,9 @@
 #include "linux/device.h"
 #include "linux/platform_device.h"
 
-static char sysfs_buf[1000];
+#define BUF_LEN 1000
+
+static char sysfs_buf[BUF_LEN];
 
 static ssize_t skeleton_show_buf(struct device * dev,
 	struct device_attribute *attr, char *buf)
@@ -16,9 +18,9 @@ static ssize_t skeleton_show_buf(struct device * dev,
 static ssize_t skeleton_store_buf(struct device * dev,
 	struct device_attribute *attr, const char *buf, size_t count)
 {
-	int len = sizeof(sysfs_buf) - 1;
-	if(len > count) len = count;
-	strncpy(sysfs_buf, buf, len);
+	int pos_to_cpy = sizeof(sysfs_buf);
+	if((pos_to_cpy + count) > BUF_LEN) return -1;
+	strncpy(sysfs_buf + pos_to_cpy, buf, count);
 	sysfs_buf[len] = 0;
 	return len;
 }

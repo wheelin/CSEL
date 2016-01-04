@@ -89,9 +89,7 @@ $ sudo make install
 \textbf{Donnée : } Etendre	la	fonctionnalité	du	pilote	de	l’exercice	\#3 afin	que	l’on	puisse	à	l’aide	d’un	paramètre	
 module	spécifier	le	nombre	d’instance.	Pour	chaque	instance	on	créera	une	variable	unique	
 permettant	de	stocker	les	données	échangées	avec	l’application	en	espace	utilisateur.\\\\
-\color{red}
-\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
-\color{black}
+\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/exercice4-multi\_instance}\\
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
@@ -219,9 +217,9 @@ file /dev/mod close
 sysfs.	Le	pilote		offrira	des	attributs	de	périphérique	afin	pouvoir	lire	et	écrire	un	bloc	de	données	
 composé	de	quelques	membres	et	de	pouvoir	modifier	le	contenu	de	la	valeur	entière.	Seules	les	
 commandes	« echo » et	« cat » doivent	être	nécessaire	pour	manipuler	ces	attributs.\\\\
-\color{red}
-\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
-\color{black}
+
+\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/exercice7-sysfs}\\
+
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
@@ -246,7 +244,7 @@ Cet exercice n'a pas été réalisé.
 \textbf{Donnée : } Implémenter	à	l’intérieur	d’un	pilote	de	périphérique	orienté	caractère,	les	mécanismes	
 nécessaires	à	la	création	du	fichier	d’accès	au	pilote	(remplacement	de	la	commande	« mknod »)	
 par	l’utilitaire	« mdev »	de	la	BusyBox.\\\\
-\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/...}\\
+\textbf{Emplacement du code : } \textit{/PilotesPeripheriques/exercice10-periph\_handler}\\
 
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
