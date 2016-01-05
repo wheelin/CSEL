@@ -407,27 +407,48 @@ Daemon application launched
 [    9.933833] [c4] pwm-samsung: tin parent at 66600000  
 \end{lstlisting}
 \newpage
-\color{red}
 \subsection{Réponse aux questions}
-1. Comment faut-il procéder pour générer l'U-Boot?
-\begin{lstlisting}
+\begin{enumerate}
+	\item Comment faut-il procéder pour générer l'U-Boot?
+	\begin{lstlisting}
+	$ make distclean				# Be sure to clean any build
+	$ make odroid_config		# Configure u-boot for the odroid xu3 board
+	$ make								  # Launch compilation process
+	\end{lstlisting}
+	\item Comment peut-on ajouter et générer un package supplémentaire dans le Buildroot?\\
+	
+	\begin{enumerate}
+		\item Prendre une configuration de carte semblable à la nôtre dans /include/configs et le modifier à notre convenance
+		\item Ajouter les informations de la carte dans le fichier boards.cfg
+		\item Ajouter le code spécifique à la carte dans le dossier /board/<your board>/
+		\item Recompiler U-Boot avec la bonne configuration
+	\end{enumerate}
+	Informations trouvées sur \url{https://www.google.ch/url?sa=t&rct=j&q=&esrc=s&source=web&cd=8&cad=rja&uact=8&ved=0ahUKEwjMzcyrjpPKAhUEuBQKHe3mAxIQFghWMAc&url=http%3A%2F%2Fevents.linuxfoundation.org%2Fsites%2Fevents%2Ffiles%2Fslides%2Fcan_board_bring_up_be_less_painful_insop_song.pdf&usg=AFQjCNGgeiAg9O47El_rymVeTo27ElMXpg&sig2=rlau77_sBBEt8S9S-tILQg}
+	\item Comment doit-on procéder pour modifier la configuration du noyau Linux?\\
+	
+	Une commande permet d'accéder à un petit menu graphique en console, qui permet de modifier les options du noyau.
+	\begin{lstlisting}
+	make linux-menuconfig
+	\end{lstlisting}
+	\item Comment faut-il faire pour générer son propre RootFS?
+	Buildroot s'occupe de ça. 
+	\begin{lstlisting}
+	$ make menuconfig        # Configure Buildroot
+	$ make
+	\end{lstlisting}
+	La commande \textit{make} va automatiquement s'acquitter des tâches suivantes:
+	\begin{itemize}
+		\item Télécharger les fichiers source requis
+		\item Installer, configurer, etc, le tool-chain requis
+		\item Configurer et installer les paquets requis par la plateforme 
+		\item Construire le noyau, si demandé
+		\item Construire une image du bootloader, si demandé
+		\item Créer un système de fichier Root dans le format sélectionné durant la configuration
+	\end{itemize}
+	\item Comment faut-il procéder pour utiliser la carte eMMC en lieu et place de la carte SD?\\
+	
+	Des variables d'environnement utilisées par le U-Boot permettent de régler l'adresse à partir de laquelle on doit faire démarrer l'OS. Les différentes cartes sont mappées en mémoire par le système, ce qui fait qu'il faut changer certaines adresses présentes la variable \textit{bootargs}.\\
+	Sinon, il suffit de pousser les dip-switchs présents sur l'odroid dans la bonne direction.
+\end{enumerate}
 
-\end{lstlisting}
-2. Comment peut-on ajouter et générer un package supplémentaire dans le Buildroot?
-\begin{lstlisting}
-
-\end{lstlisting}
-3. Comment doit-on procéder pour modifier la configuration du noyau Linux?
-\begin{lstlisting}
-
-\end{lstlisting}
-4. Comment faut-il faire pour générer son propre RootFS?
-\begin{lstlisting}
-
-\end{lstlisting}
-5. Comment faut-il procéder pour utiliser la carte eMMC en lieu et place de la carte SD?
-\begin{lstlisting}
-
-\end{lstlisting}
-\color{black}
 
