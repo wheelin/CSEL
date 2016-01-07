@@ -238,14 +238,14 @@ Cet exercice n'a pas été réalisé.
 \subsubsection{Exercice 9}
 Cet exercice n'a pas été réalisé.
 
-\color{red}
 \subsection{Gestionnaires de périphériques}
 \subsubsection{Exercice 10}
 \textbf{Donnée : } Implémenter	à	l’intérieur	d’un	pilote	de	périphérique	orienté	caractère,	les	mécanismes	
 nécessaires	à	la	création	du	fichier	d’accès	au	pilote	(remplacement	de	la	commande	« mknod »)	
 par	l’utilitaire	« mdev »	de	la	BusyBox.\\\\
 \textbf{Emplacement du code : } \textit{/PilotesPeripheriques/exercice10-periph\_handler}\\
-Il est important de rappeller qu'il faut demander un numéro de device via le service \textif{alloc_chrdev_region} au noyau pour que ça marche correctement. 
+Il est important de rappeler qu'il faut demander un numéro de device via le service \textit{alloc\_chrdev\_region} au noyau pour que ça marche correctement. Le module noyau préparé par nos soins a le numéro 249, il est bien présent dans le dossier \textit{/dev/}, mais aussi dans l'arborescence \textit{/sys/}. \textit{mdev} s'occupe de créer le nœud pour le driver quand celui-ci est chargé avec \textit{modprobe}.\\
+
 \textbf{Exécution du code : } \\
 \begin{lstlisting}
 # cat /proc/devices 
@@ -311,7 +311,6 @@ Block devices:
 /sys/bus/platform/drivers/skeleton/skeleton
 /sys/devices/platform/skeleton
 \end{lstlisting}
-\color{black}
 
 
 

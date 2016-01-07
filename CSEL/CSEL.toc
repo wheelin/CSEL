@@ -54,50 +54,50 @@
 \contentsline {subsubsection}{\numberline {4.6.1}Exercice 9}{33}{subsubsection.4.6.1}
 \contentsline {subsection}{\numberline {4.7}Gestionnaires de p\IeC {\'e}riph\IeC {\'e}riques}{33}{subsection.4.7}
 \contentsline {subsubsection}{\numberline {4.7.1}Exercice 10}{33}{subsubsection.4.7.1}
-\contentsline {section}{\numberline {5}Programmation syst\IeC {\`e}me : Syst\IeC {\`e}me de fichiers}{35}{section.5}
-\contentsline {subsection}{\numberline {5.1}Contexte}{35}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Travail \IeC {\`a} r\IeC {\'e}aliser}{35}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Travail r\IeC {\'e}alis\IeC {\'e}}{35}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Description}{35}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}Configuration des GPIO}{36}{subsubsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3}Ex\IeC {\'e}cution du code}{36}{subsubsection.5.3.3}
-\contentsline {subsubsection}{\numberline {5.3.4}Syslog}{37}{subsubsection.5.3.4}
-\contentsline {subsubsection}{\numberline {5.3.5}Mesure de performance}{37}{subsubsection.5.3.5}
-\contentsline {subsubsection}{\numberline {5.3.6}Am\IeC {\'e}lioration possibles}{38}{subsubsection.5.3.6}
-\contentsline {section}{\numberline {6}Programmation syst\IeC {\`e}me : Multiprocessing}{39}{section.6}
-\contentsline {subsection}{\numberline {6.1}Processus, signaux et communication}{39}{subsection.6.1}
-\contentsline {subsubsection}{\numberline {6.1.1}Exercice 1}{39}{subsubsection.6.1.1}
-\contentsline {subsection}{\numberline {6.2}CGroups}{40}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Exercice 2}{40}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2}Exercice 3}{43}{subsubsection.6.2.2}
-\contentsline {section}{\numberline {7}Optimisation : Performances}{48}{section.7}
-\contentsline {subsection}{\numberline {7.1}Installation de perf}{48}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Prise en main de perf}{48}{subsection.7.2}
-\contentsline {subsubsection}{\numberline {7.2.1}Exercice 1}{48}{subsubsection.7.2.1}
-\contentsline {subsubsection}{\numberline {7.2.2}Exercice 2}{49}{subsubsection.7.2.2}
-\contentsline {subsubsection}{\numberline {7.2.3}Exercice 3}{49}{subsubsection.7.2.3}
-\contentsline {subsubsection}{\numberline {7.2.4}Exercice 4}{50}{subsubsection.7.2.4}
-\contentsline {subsubsection}{\numberline {7.2.5}Exercice 5}{50}{subsubsection.7.2.5}
-\contentsline {subsubsection}{\numberline {7.2.6}Exercice 6}{51}{subsubsection.7.2.6}
-\contentsline {subsection}{\numberline {7.3}Analyse et optimisation d'un programme}{51}{subsection.7.3}
-\contentsline {subsubsection}{\numberline {7.3.1}Exercice 1}{51}{subsubsection.7.3.1}
-\contentsline {subsubsection}{\numberline {7.3.2}Exercice 2}{52}{subsubsection.7.3.2}
-\contentsline {subsubsection}{\numberline {7.3.3}Exercice 3}{52}{subsubsection.7.3.3}
-\contentsline {subsubsection}{\numberline {7.3.4}Exercice 4}{52}{subsubsection.7.3.4}
-\contentsline {subsection}{\numberline {7.4}Parsing de logs apache}{54}{subsection.7.4}
-\contentsline {subsubsection}{\numberline {7.4.1}Exercice 1}{54}{subsubsection.7.4.1}
-\contentsline {subsubsection}{\numberline {7.4.2}Exercice 2}{54}{subsubsection.7.4.2}
-\contentsline {subsubsection}{\numberline {7.4.3}Exercice 3}{54}{subsubsection.7.4.3}
-\contentsline {subsubsection}{\numberline {7.4.4}Exercice 4}{55}{subsubsection.7.4.4}
-\contentsline {subsubsection}{\numberline {7.4.5}Exercice 5}{56}{subsubsection.7.4.5}
-\contentsline {section}{\numberline {8}Mini Projet - Programmation noyau et syst\IeC {\`e}me}{57}{section.8}
-\contentsline {subsection}{\numberline {8.1}Travail \IeC {\`a} r\IeC {\'e}aliser}{57}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Installation des diff\IeC {\'e}rentes parties}{57}{subsection.8.2}
-\contentsline {subsubsection}{\numberline {8.2.1}Daemon}{57}{subsubsection.8.2.1}
-\contentsline {subsubsection}{\numberline {8.2.2}Module noyau}{58}{subsubsection.8.2.2}
-\contentsline {subsubsection}{\numberline {8.2.3}Application utilisateur}{58}{subsubsection.8.2.3}
-\contentsline {subsection}{\numberline {8.3}Daemon en espace utilisateur}{58}{subsection.8.3}
-\contentsline {subsection}{\numberline {8.4}Module de contr\IeC {\^o}le du ventilateur}{59}{subsection.8.4}
-\contentsline {subsection}{\numberline {8.5}Application utilisateur}{60}{subsection.8.5}
-\contentsline {subsection}{\numberline {8.6}Mesure de performances}{60}{subsection.8.6}
-\contentsline {subsection}{\numberline {8.7}Points \IeC {\`a} am\IeC {\'e}liorer}{60}{subsection.8.7}
+\contentsline {section}{\numberline {5}Programmation syst\IeC {\`e}me : Syst\IeC {\`e}me de fichiers}{36}{section.5}
+\contentsline {subsection}{\numberline {5.1}Contexte}{36}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Travail \IeC {\`a} r\IeC {\'e}aliser}{36}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Travail r\IeC {\'e}alis\IeC {\'e}}{36}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Description}{36}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Configuration des GPIO}{37}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}Ex\IeC {\'e}cution du code}{37}{subsubsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.4}Syslog}{38}{subsubsection.5.3.4}
+\contentsline {subsubsection}{\numberline {5.3.5}Mesure de performance}{38}{subsubsection.5.3.5}
+\contentsline {subsubsection}{\numberline {5.3.6}Am\IeC {\'e}lioration possibles}{39}{subsubsection.5.3.6}
+\contentsline {section}{\numberline {6}Programmation syst\IeC {\`e}me : Multiprocessing}{40}{section.6}
+\contentsline {subsection}{\numberline {6.1}Processus, signaux et communication}{40}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Exercice 1}{40}{subsubsection.6.1.1}
+\contentsline {subsection}{\numberline {6.2}CGroups}{41}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Exercice 2}{41}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Exercice 3}{44}{subsubsection.6.2.2}
+\contentsline {section}{\numberline {7}Optimisation : Performances}{49}{section.7}
+\contentsline {subsection}{\numberline {7.1}Installation de perf}{49}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Prise en main de perf}{49}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Exercice 1}{49}{subsubsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2}Exercice 2}{50}{subsubsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.3}Exercice 3}{50}{subsubsection.7.2.3}
+\contentsline {subsubsection}{\numberline {7.2.4}Exercice 4}{51}{subsubsection.7.2.4}
+\contentsline {subsubsection}{\numberline {7.2.5}Exercice 5}{51}{subsubsection.7.2.5}
+\contentsline {subsubsection}{\numberline {7.2.6}Exercice 6}{52}{subsubsection.7.2.6}
+\contentsline {subsection}{\numberline {7.3}Analyse et optimisation d'un programme}{52}{subsection.7.3}
+\contentsline {subsubsection}{\numberline {7.3.1}Exercice 1}{52}{subsubsection.7.3.1}
+\contentsline {subsubsection}{\numberline {7.3.2}Exercice 2}{53}{subsubsection.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.3}Exercice 3}{53}{subsubsection.7.3.3}
+\contentsline {subsubsection}{\numberline {7.3.4}Exercice 4}{53}{subsubsection.7.3.4}
+\contentsline {subsection}{\numberline {7.4}Parsing de logs apache}{55}{subsection.7.4}
+\contentsline {subsubsection}{\numberline {7.4.1}Exercice 1}{55}{subsubsection.7.4.1}
+\contentsline {subsubsection}{\numberline {7.4.2}Exercice 2}{55}{subsubsection.7.4.2}
+\contentsline {subsubsection}{\numberline {7.4.3}Exercice 3}{55}{subsubsection.7.4.3}
+\contentsline {subsubsection}{\numberline {7.4.4}Exercice 4}{56}{subsubsection.7.4.4}
+\contentsline {subsubsection}{\numberline {7.4.5}Exercice 5}{57}{subsubsection.7.4.5}
+\contentsline {section}{\numberline {8}Mini Projet - Programmation noyau et syst\IeC {\`e}me}{58}{section.8}
+\contentsline {subsection}{\numberline {8.1}Travail \IeC {\`a} r\IeC {\'e}aliser}{58}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Installation des diff\IeC {\'e}rentes parties}{58}{subsection.8.2}
+\contentsline {subsubsection}{\numberline {8.2.1}Daemon}{58}{subsubsection.8.2.1}
+\contentsline {subsubsection}{\numberline {8.2.2}Module noyau}{59}{subsubsection.8.2.2}
+\contentsline {subsubsection}{\numberline {8.2.3}Application utilisateur}{59}{subsubsection.8.2.3}
+\contentsline {subsection}{\numberline {8.3}Daemon en espace utilisateur}{59}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Module de contr\IeC {\^o}le du ventilateur}{60}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.5}Application utilisateur}{61}{subsection.8.5}
+\contentsline {subsection}{\numberline {8.6}Mesure de performances}{61}{subsection.8.6}
+\contentsline {subsection}{\numberline {8.7}Points \IeC {\`a} am\IeC {\'e}liorer}{61}{subsection.8.7}
