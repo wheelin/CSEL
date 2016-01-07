@@ -3,6 +3,7 @@
 #include <linux/kernel.h>
 #include "linux/device.h"
 #include "linux/platform_device.h"
+#include <linux/fs.h>
 
 #define BUF_LEN 1000
 
@@ -18,9 +19,9 @@ static ssize_t skeleton_show_buf(struct device * dev,
 static ssize_t skeleton_store_buf(struct device * dev,
 	struct device_attribute *attr, const char *buf, size_t count)
 {
-	int pos_to_cpy = sizeof(sysfs_buf);
-	if((pos_to_cpy + count) > BUF_LEN) return -1;
-	strncpy(sysfs_buf + pos_to_cpy, buf, count);
+	int len = sizeof(sysfs_buf) - 1;
+	if(len > count) len = count;
+	strncpy(sysfs_buf, buf, len);
 	sysfs_buf[len] = 0;
 	return len;
 }
@@ -45,8 +46,11 @@ static struct platform_device sysfs_device = {
 static int __init skeleton_init(void)
 {
 	int status;
-	sysfs_device.name = "own_dev";
-	sysfs_device.dev.devt = 1;
+
+	if(alloc_chrdev_region(&sysfs_device.dev.devt, 1,1,"mySkeletonModule") != 0)
+	{
+		return -1;
+	}
 
 	status = 0;
 	if(status == 0)
@@ -65,6 +69,7 @@ static void __exit skeleton_exit(void)
 	device_remove_file(&sysfs_device.dev, &dev_attr_attr);
 	platform_device_unregister(&sysfs_device);
 	platform_driver_unregister(&sysfs_driver);
+	unregister_chrdev_region(sysfs_device.dev.devt, 1);
 	pr_info("Linux module skeleton unloaded\n");
 }
 
